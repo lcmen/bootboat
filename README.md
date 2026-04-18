@@ -4,6 +4,19 @@
 
 Write `class="btn btn-primary"` instead of copying long utility strings from Sailboat UI examples. Same visual design, semantic class names.
 
+## Installation
+
+1. Download `bootboat.css` from the [latest release](https://github.com/lcmen/bootboat/releases/latest)
+2. Add it to your Tailwind CSS v4 project:
+
+```css
+@import "tailwindcss";
+@plugin "@tailwindcss/forms" { strategy: base }
+@import "./bootboat.css";
+```
+
+**Requirements:** Tailwind CSS v4+ and `@tailwindcss/forms` plugin with `base` strategy.
+
 ## Requirements
 
 - Tailwind CSS v4+
@@ -53,7 +66,7 @@ Then use classes in your HTML. Buttons use a base + variant pattern (like Bootst
 | Buttons     | `.btn` + `.btn-primary`, `-secondary`, `-danger`, `-warning`, `-success`, `-info`, `-dark`, `-ghost`, `-glass`, `-white` + `.btn-sm`, `.btn-lg`, `.btn-full` |
 | Icon Buttons| `.btn-icon` + `.btn-icon-primary`, `.btn-icon-secondary` |
 | Button Group| `.btn-group`, `.btn-group-item`, `.btn-group-item-active`, `.btn-group-label` |
-| Forms       | `.form-input`, `.form-input-error`, `.form-select`, `.form-checkbox`, `.form-radio`, `.form-textarea`, `.form-textarea-error`, `.form-file`, `.form-file-dropzone`, `.form-toggle`, `.form-toggle-track`, `.form-toggle-track-sm`, `.form-toggle-track-lg`, `.form-label`, `.form-label-required`, `.form-help`, `.form-error`, `.form-group`, `.form-row` |
+| Forms       | `.form-input`, `.form-input-error`, `.form-select`, `.form-checkbox`, `.form-radio`, `.form-textarea`, `.form-textarea-error`, `.form-file`, `.form-file-dropzone`, `.form-toggle`, `.form-toggle-track`, `.form-toggle-track-sm`, `.form-toggle-track-lg`, `.form-label`, `.form-label-required`, `.form-help`, `.form-error`, `.form-group`, `.form-row`, `.form-addon`, `.form-addon-left`, `.form-addon-right`, `.has-addon-left`, `.has-addon-right` |
 | Cards       | `.card`, `.card-body`, `.card-sm`, `.card-md`, `.card-lg` |
 | Navbar      | `.navbar`, `.navbar-inner`, `.navbar-brand`, `.navbar-brand-icon`, `.navbar-actions` |
 | Dropdown    | `.dropdown`, `.dropdown-trigger`, `.dropdown-panel`, `.dropdown-panel-left`, `.dropdown-panel-right`, `.dropdown-panel-wide`, `.dropdown-section`, `.dropdown-item`, `.dropdown-item-danger`, `.dropdown-item-icon` |

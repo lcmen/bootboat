@@ -1,0 +1,26 @@
+<aside class="sidebar" :class="{ 'sidebar-open': sidebarOpen }" x-cloak>
+  <!-- Close button for mobile -->
+  <button @click="sidebarOpen = false" class="sidebar-close-btn" aria-label="Close menu">
+    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+      <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+    </svg>
+  </button>
+
+  <a href="/" class="sidebar-brand">Bootboat</a>
+  <nav id="sidebar-nav">
+    <a href="/typography/" class="nav-item{% if page.url == '/typography/' %} nav-item-active{% endif %}">Typography</a>
+    <a href="/buttons/" class="nav-item{% if page.url == '/buttons/' %} nav-item-active{% endif %}">Buttons</a>
+    <a href="/forms/" class="nav-item{% if page.url == '/forms/' %} nav-item-active{% endif %}">Forms</a>
+    <a href="/cards/" class="nav-item{% if page.url == '/cards/' %} nav-item-active{% endif %}">Cards</a>
+    <a href="/navbar/" class="nav-item{% if page.url == '/navbar/' %} nav-item-active{% endif %}">Navbar</a>
+    <a href="/dropdown/" class="nav-item{% if page.url == '/dropdown/' %} nav-item-active{% endif %}">Dropdown</a>
+    <a href="/modal/" class="nav-item{% if page.url == '/modal/' %} nav-item-active{% endif %}">Modal</a>
+    <a href="/alerts/" class="nav-item{% if page.url == '/alerts/' %} nav-item-active{% endif %}">Alerts &amp; Badges</a>
+    <a href="/tables/" class="nav-item{% if page.url == '/tables/' %} nav-item-active{% endif %}">Tables</a>
+    <a href="/navigation/" class="nav-item{% if page.url == '/navigation/' %} nav-item-active{% endif %}">Navigation</a>
+    <a href="/list/" class="nav-item{% if page.url == '/list/' %} nav-item-active{% endif %}">List</a>
+  </nav>
+</aside>
+
+<!-- Mobile backdrop overlay -->
+<div x-show="sidebarOpen" x-transition.opacity class="sidebar-backdrop" @click="sidebarOpen = false"></div>

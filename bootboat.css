@@ -265,7 +265,7 @@ label[for],
 }
 
 @utility form-input {
-  :where(&) { @apply block w-full cursor-text rounded-md border-secondary shadow-sm px-3 py-2 text-sm; }
+  :where(&) { @apply block w-full cursor-text rounded-md border-secondary bg-white shadow-sm px-3 py-2 text-sm; }
   @variant focus { @apply border-primary-400 ring ring-primary-200 outline-none; }
   @variant disabled { @apply cursor-not-allowed bg-gray-50 text-gray-500; }
 }
@@ -337,13 +337,21 @@ label[for],
   :where(&) { @apply relative z-0 flex; }
 }
 @utility form-addon {
-  :where(&) { @apply flex items-center rounded-md border border-gray-300 bg-gray-100 px-2.5 text-sm text-gray-500 shadow-sm; }
+  :where(&) { @apply flex items-center; }
 }
 @utility form-addon-left {
-  :where(&) { @apply rounded-r-none border-r-0; }
+  :where(&) { @apply flex items-center rounded-l-md rounded-r-none border-y border-l border-gray-300 bg-white px-2.5 py-2 text-sm text-gray-500 shadow-sm; }
 }
 @utility form-addon-right {
-  :where(&) { @apply rounded-l-none border-l-0; }
+  :where(&) { @apply flex items-center rounded-r-md rounded-l-none border-y border-r border-gray-300 bg-white px-2.5 py-2 text-sm text-gray-500 shadow-sm; }
+}
+@utility has-addon-left {
+  & { @apply rounded-l-none relative z-10; }
+  &:focus { @apply z-20; }
+}
+@utility has-addon-right {
+  & { @apply rounded-r-none relative z-10; }
+  &:focus { @apply z-20; }
 }
 @utility form-addon-disabled {
   :where(&) { @apply cursor-not-allowed bg-gray-50 text-gray-400; }

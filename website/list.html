@@ -1,0 +1,162 @@
+---
+layout: layout.html
+title: List
+---
+
+<div class="section">
+  <h1 class="section-title">List</h1>
+  <p class="section-lead">List variants, media objects, and dividers.</p>
+
+  <div class="subsection">
+    <h2 class="h5 mb-4">List</h2>
+
+    <p class="demo-label">With icons — .list-icon + .list-icon-item + .list-icon-marker</p>
+    <div class="demo-card">
+      <div class="demo-preview">
+        <div class="max-w-lg">
+          <ul class="list-icon">
+            <li class="list-icon-item">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="list-icon-marker"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.06l2.5 2.5a.75.75 0 001.137-.089l4-5.5z" clip-rule="evenodd" /></svg>
+              Share team inboxes
+            </li>
+            <li class="list-icon-item">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="list-icon-marker"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.06l2.5 2.5a.75.75 0 001.137-.089l4-5.5z" clip-rule="evenodd" /></svg>
+              Deliver instant answers
+            </li>
+            <li class="list-icon-item">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="list-icon-marker"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.06l2.5 2.5a.75.75 0 001.137-.089l4-5.5z" clip-rule="evenodd" /></svg>
+              Manage your team with reports
+            </li>
+          </ul>
+        </div>
+      </div>
+      <pre class="code-block"><code>&lt;ul class="list-icon"&gt;
+  &lt;li class="list-icon-item"&gt;
+    &lt;svg class="list-icon-marker"&gt;...&lt;/svg&gt;
+    Share team inboxes
+  &lt;/li&gt;
+&lt;/ul&gt;</code></pre>
+    </div>
+
+    <p class="demo-label mt-6">Bordered — .list-bordered + .list-bordered-item</p>
+    <div class="demo-card">
+      <div class="demo-preview">
+        <div class="max-w-lg">
+          <ul class="list-bordered">
+            <li class="list-bordered-item">
+              <h4 class="h5">Share team inboxes</h4>
+              <p class="text-muted">Whether you have a team of 2 or 200, our shared inboxes keep everyone on the same page.</p>
+            </li>
+            <li class="list-bordered-item">
+              <h4 class="h5">Deliver instant answers</h4>
+              <p class="text-muted">An all-in-one customer service platform that helps you balance everything.</p>
+            </li>
+            <li class="list-bordered-item">
+              <h4 class="h5">Manage your team with reports</h4>
+              <p class="text-muted">Measure what matters with easy-to-use reports.</p>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <pre class="code-block"><code>&lt;ul class="list-bordered"&gt;
+  &lt;li class="list-bordered-item"&gt;
+    &lt;h4 class="h5"&gt;Title&lt;/h4&gt;
+    &lt;p class="text-muted"&gt;Description&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;</code></pre>
+    </div>
+  </div>
+
+  <div class="subsection mt-10">
+    <h2 class="h5 mb-4">Media Object</h2>
+    <p class="demo-label">Image + text. Align with .media-center or .media-bottom.</p>
+
+    <div class="demo-card">
+      <div class="demo-preview">
+        <div class="max-w-2xl space-y-8">
+          <div>
+            <p class="text-xs font-mono text-secondary-400 mb-2">.media (top-aligned)</p>
+            <div class="media">
+              <img class="media-img" src="https://i.pravatar.cc/96?img=12" alt="" />
+              <div class="media-body">
+                <h4 class="h5">Sarah Connor</h4>
+                <p class="text-muted mt-1">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation.</p>
+              </div>
+            </div>
+          </div>
+          <div>
+            <p class="text-xs font-mono text-secondary-400 mb-2">.media-center (vertically centered)</p>
+            <div class="media-center">
+              <img class="media-img" src="https://i.pravatar.cc/96?img=15" alt="" />
+              <div class="media-body">
+                <h4 class="h5">John Doe</h4>
+                <p class="text-muted mt-1">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation.</p>
+              </div>
+            </div>
+          </div>
+          <div>
+            <p class="text-xs font-mono text-secondary-400 mb-2">.media-bottom (bottom-aligned)</p>
+            <div class="media-bottom">
+              <img class="media-img" src="https://i.pravatar.cc/96?img=18" alt="" />
+              <div class="media-body">
+                <h4 class="h5">Jane Smith</h4>
+                <p class="text-muted mt-1">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation.</p>
+              </div>
+            </div>
+          </div>
+          <div>
+            <p class="text-xs font-mono text-secondary-400 mb-2">.media-img-lg (64px image)</p>
+            <div class="media-center">
+              <img class="media-img-lg" src="https://i.pravatar.cc/128?img=20" alt="" />
+              <div class="media-body">
+                <h4 class="h5">Mike Johnson</h4>
+                <p class="text-muted mt-1">Using .media-img-lg for a larger avatar. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <pre class="code-block"><code>&lt;!-- Top aligned --&gt;
+&lt;div class="media"&gt;
+  &lt;img class="media-img" src="avatar.jpg" alt="" /&gt;
+  &lt;div class="media-body"&gt;
+    &lt;h4 class="h5"&gt;Name&lt;/h4&gt;
+    &lt;p class="text-muted"&gt;Description&lt;/p&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;!-- Center aligned --&gt;
+&lt;div class="media-center"&gt;...&lt;/div&gt;
+
+&lt;!-- Bottom aligned --&gt;
+&lt;div class="media-bottom"&gt;...&lt;/div&gt;
+
+&lt;!-- Image sizes: media-img (48px), media-img-lg (64px) --&gt;</code></pre>
+    </div>
+  </div>
+
+  <div class="subsection mt-10">
+    <h2 class="h5 mb-4">Divider</h2>
+
+    <div class="demo-card">
+      <div class="demo-preview">
+        <div class="max-w-md space-y-4">
+          <p class="text-body">Content above</p>
+          <div class="divider"><span class="divider-text">OR</span></div>
+          <p class="text-body">Content below</p>
+
+          <p class="text-body mt-6">Section one</p>
+          <hr class="divider-line" />
+          <p class="text-body">Section two</p>
+        </div>
+      </div>
+      <pre class="code-block"><code>&lt;!-- Text divider --&gt;
+&lt;div class="divider"&gt;
+  &lt;span class="divider-text"&gt;OR&lt;/span&gt;
+&lt;/div&gt;
+
+&lt;!-- Simple line --&gt;
+&lt;hr class="divider-line" /&gt;</code></pre>
+    </div>
+  </div>
+</div>

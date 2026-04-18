@@ -1,0 +1,158 @@
+---
+layout: layout.html
+title: Navigation
+---
+
+<div class="section">
+  <h1 class="section-title">Navigation</h1>
+  <p class="section-lead">Tabs, breadcrumbs, and pagination.</p>
+
+  <div class="subsection">
+    <h2 class="h5 mb-4">Tabs</h2>
+    <p class="demo-label">Underline-style tabs — requires Alpine.js</p>
+    <div class="demo-card">
+      <div class="demo-preview" x-data="{ tab: 0 }">
+        <div class="tab-list">
+          <ul class="tab-list-inner">
+            <li><a @click="tab = 0" class="tab-item" :class="tab === 0 && 'tab-item-active'">Profile</a></li>
+            <li><a @click="tab = 1" class="tab-item" :class="tab === 1 && 'tab-item-active'">Settings</a></li>
+            <li>
+              <a @click="tab = 2" class="tab-item" :class="tab === 2 && 'tab-item-active'">
+                Notifications
+                <span class="tab-badge">8</span>
+              </a>
+            </li>
+            <li><a @click="tab = 3" class="tab-item" :class="tab === 3 && 'tab-item-active'">Billing</a></li>
+          </ul>
+        </div>
+        <div class="tab-panel">
+          <div x-show="tab === 0"><p class="text-body">Profile content.</p></div>
+          <div x-show="tab === 1"><p class="text-body">Settings content.</p></div>
+          <div x-show="tab === 2"><p class="text-body">8 unread notifications.</p></div>
+          <div x-show="tab === 3"><p class="text-body">Billing content.</p></div>
+        </div>
+      </div>
+      <pre class="code-block"><code>&lt;div x-data="{ tab: 0 }"&gt;
+  &lt;div class="tab-list"&gt;
+    &lt;ul class="tab-list-inner"&gt;
+      &lt;li&gt;
+        &lt;a @click="tab = 0" class="tab-item" :class="tab === 0 &amp;&amp; 'tab-item-active'"&gt;
+          Profile
+        &lt;/a&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;a @click="tab = 1" class="tab-item" :class="tab === 1 &amp;&amp; 'tab-item-active'"&gt;
+          Notifications &lt;span class="tab-badge"&gt;8&lt;/span&gt;
+        &lt;/a&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/div&gt;
+  &lt;div class="tab-panel"&gt;
+    &lt;div x-show="tab === 0"&gt;Profile content.&lt;/div&gt;
+    &lt;div x-show="tab === 1"&gt;Notifications content.&lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+    </div>
+  </div>
+
+  <div class="subsection mt-10">
+    <h2 class="h5 mb-4">Breadcrumb</h2>
+
+    <p class="demo-label">Default (with slashes)</p>
+    <div class="demo-card">
+      <div class="demo-preview">
+        <nav aria-label="breadcrumb">
+          <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="#">Home</a></li>
+            <li class="breadcrumb-separator"><span>/</span> <a href="#" class="breadcrumb-item">Components</a></li>
+            <li class="breadcrumb-separator"><span>/</span> <span class="breadcrumb-current">Breadcrumb</span></li>
+          </ol>
+        </nav>
+      </div>
+      <pre class="code-block"><code>&lt;nav aria-label="breadcrumb"&gt;
+  &lt;ol class="breadcrumb"&gt;
+    &lt;li class="breadcrumb-item"&gt;&lt;a href="#"&gt;Home&lt;/a&gt;&lt;/li&gt;
+    &lt;li class="breadcrumb-separator"&gt;
+      &lt;span&gt;/&lt;/span&gt;
+      &lt;a href="#" class="breadcrumb-item"&gt;Components&lt;/a&gt;
+    &lt;/li&gt;
+    &lt;li class="breadcrumb-separator"&gt;
+      &lt;span&gt;/&lt;/span&gt;
+      &lt;span class="breadcrumb-current"&gt;Breadcrumb&lt;/span&gt;
+    &lt;/li&gt;
+  &lt;/ol&gt;
+&lt;/nav&gt;</code></pre>
+    </div>
+
+    <p class="demo-label mt-6">With chevrons</p>
+    <div class="demo-card">
+      <div class="demo-preview">
+        <nav aria-label="breadcrumb">
+          <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="#">Home</a></li>
+            <li class="breadcrumb-separator">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="h-4 w-4"><path fill-rule="evenodd" d="M7.21 14.77a.75.75 0 01.02-1.06L11.168 10 7.23 6.29a.75.75 0 111.04-1.08l4.5 4.25a.75.75 0 010 1.08l-4.5 4.25a.75.75 0 01-1.06-.02z" clip-rule="evenodd" /></svg>
+              <a href="#" class="breadcrumb-item">Components</a>
+            </li>
+            <li class="breadcrumb-separator">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="h-4 w-4"><path fill-rule="evenodd" d="M7.21 14.77a.75.75 0 01.02-1.06L11.168 10 7.23 6.29a.75.75 0 111.04-1.08l4.5 4.25a.75.75 0 010 1.08l-4.5 4.25a.75.75 0 01-1.06-.02z" clip-rule="evenodd" /></svg>
+              <span class="breadcrumb-current">Breadcrumb</span>
+            </li>
+          </ol>
+        </nav>
+      </div>
+      <pre class="code-block"><code>&lt;li class="breadcrumb-separator"&gt;
+  &lt;svg class="h-4 w-4"&gt;...&lt;/svg&gt;
+  &lt;a href="#" class="breadcrumb-item"&gt;Components&lt;/a&gt;
+&lt;/li&gt;</code></pre>
+    </div>
+
+    <p class="demo-label mt-6">With background — .breadcrumb-bg</p>
+    <div class="demo-card">
+      <div class="demo-preview">
+        <nav aria-label="breadcrumb">
+          <ol class="breadcrumb-bg">
+            <li class="breadcrumb-item"><a href="#">Home</a></li>
+            <li class="breadcrumb-separator"><span>/</span> <a href="#" class="breadcrumb-item">Components</a></li>
+            <li class="breadcrumb-separator"><span>/</span> <span class="breadcrumb-current">Breadcrumb</span></li>
+          </ol>
+        </nav>
+      </div>
+      <pre class="code-block"><code>&lt;ol class="breadcrumb-bg"&gt;...&lt;/ol&gt;</code></pre>
+    </div>
+  </div>
+
+  <div class="subsection mt-10">
+    <h2 class="h5 mb-4">Pagination</h2>
+
+    <p class="demo-label">Page navigation with prev/next and numbered items</p>
+    <div class="demo-card">
+      <div class="demo-preview">
+        <nav class="pagination">
+          <a href="#" class="pagination-prev">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="pagination-icon"><path fill-rule="evenodd" d="M12.79 5.23a.75.75 0 01-.02 1.06L8.832 10l3.938 3.71a.75.75 0 11-1.04 1.08l-4.5-4.25a.75.75 0 010-1.08l4.5-4.25a.75.75 0 011.06.02z" clip-rule="evenodd" /></svg>
+          </a>
+          <a href="#" class="pagination-item">1</a>
+          <a href="#" class="pagination-item-active" aria-current="page">2</a>
+          <a href="#" class="pagination-item">3</a>
+          <a href="#" class="pagination-item">4</a>
+          <a href="#" class="pagination-item">5</a>
+          <a href="#" class="pagination-next">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="pagination-icon"><path fill-rule="evenodd" d="M7.21 14.77a.75.75 0 01.02-1.06L11.168 10 7.23 6.29a.75.75 0 111.04-1.08l4.5 4.25a.75.75 0 010 1.08l-4.5 4.25a.75.75 0 01-1.06-.02z" clip-rule="evenodd" /></svg>
+          </a>
+        </nav>
+      </div>
+      <pre class="code-block"><code>&lt;nav class="pagination"&gt;
+  &lt;a href="#" class="pagination-prev"&gt;
+    &lt;svg class="pagination-icon"&gt;...&lt;/svg&gt;
+  &lt;/a&gt;
+  &lt;a href="#" class="pagination-item"&gt;1&lt;/a&gt;
+  &lt;a href="#" class="pagination-item-active" aria-current="page"&gt;2&lt;/a&gt;
+  &lt;a href="#" class="pagination-item"&gt;3&lt;/a&gt;
+  &lt;a href="#" class="pagination-next"&gt;
+    &lt;svg class="pagination-icon"&gt;...&lt;/svg&gt;
+  &lt;/a&gt;
+&lt;/nav&gt;</code></pre>
+    </div>
+  </div>
+</div>

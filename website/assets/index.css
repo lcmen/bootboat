@@ -1,0 +1,208 @@
+/* website.css — Tailwind v4 input for the website */
+
+@import "tailwindcss";
+@plugin "@tailwindcss/forms" { strategy: base }
+@source "../*.html";
+@import "../../bootboat.css";
+
+
+/* ── Website-only helpers ───────────────────────────────────
+ * These are NOT part of the bootboat library — they exist
+ * solely to style the showcase/demo sections in the website.
+ * ───────────────────────────────────────────────────────────── */
+
+.public-bg {
+  background: linear-gradient(135deg, var(--color-primary-500) 0%, var(--color-primary-400) 40%, var(--color-primary-300) 100%);
+  position: relative;
+}
+.public-bg::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='1'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+  opacity: 0.06;
+  pointer-events: none;
+}
+
+.section {
+  @apply py-10 border-b border-gray-200;
+}
+.section:last-child {
+  @apply border-b-0;
+}
+.section-title {
+  @apply text-2xl font-bold text-secondary-900 mb-1;
+}
+.section-lead {
+  @apply text-sm text-secondary-500 mb-6;
+}
+.demo-row {
+  @apply flex flex-wrap items-center gap-3 mb-3;
+}
+.demo-label {
+  @apply text-xs font-mono text-secondary-400 mb-2;
+}
+.demo-block {
+  @apply p-6 bg-white border border-gray-200 rounded-lg;
+}
+.demo-block-dark {
+  @apply p-6 rounded-lg relative z-10;
+  background: linear-gradient(135deg, var(--color-primary-500) 0%, var(--color-primary-400) 40%, var(--color-primary-300) 100%);
+}
+.demo-block-dark::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='1'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+  opacity: 0.06;
+  pointer-events: none;
+}
+.code {
+  @apply font-mono text-xs text-secondary-600 bg-secondary-50 px-1.5 py-0.5 rounded;
+}
+
+
+/* ── Reference layout ─────────────────────────────────────────
+ * Sidebar + frame layout for the multi-page component reference.
+ * NOT part of the bootboat library.
+ * ───────────────────────────────────────────────────────────── */
+
+.layout { @apply flex min-h-screen; }
+
+/* Sidebar - Desktop: fixed sidebar, Mobile: slide-out overlay */
+.sidebar {
+  @apply fixed left-0 top-0 h-screen w-56 overflow-y-auto border-r border-gray-200 bg-white px-4 py-6 z-50;
+  transform: translateX(-100%);
+  transition: transform 0.3s ease-in-out;
+}
+
+@media (min-width: 768px) {
+  .sidebar {
+    transform: translateX(0);
+  }
+}
+
+.sidebar.sidebar-open {
+  transform: translateX(0);
+}
+
+.sidebar-brand {
+  @apply block text-sm font-bold text-secondary-900 mb-6 px-3;
+}
+
+.brand-version { @apply font-normal text-secondary-400; }
+
+.nav-section { @apply text-xs font-semibold text-secondary-400 uppercase tracking-wide px-3 mb-1 mt-4; }
+
+.nav-item {
+  @apply block rounded-md px-3 py-1.5 text-sm text-secondary-500 hover:bg-secondary-50 hover:text-secondary-900 mb-0.5;
+}
+
+.nav-item-active { @apply bg-primary-50 text-primary-700 font-medium; }
+
+/* Mobile menu button */
+.mobile-menu-btn {
+  @apply fixed top-4 right-4 z-40 p-2 bg-white rounded-md shadow-sm border border-gray-200 md:hidden;
+}
+
+.mobile-menu-btn svg {
+  @apply w-5 h-5 text-secondary-600;
+}
+
+/* Mobile sidebar close button */
+.sidebar-close-btn {
+  @apply absolute top-4 right-4 p-1 text-secondary-400 hover:text-secondary-600 md:hidden;
+}
+
+.sidebar-close-btn svg {
+  @apply w-5 h-5;
+}
+
+/* Mobile backdrop overlay */
+.sidebar-backdrop {
+  @apply fixed inset-0 bg-black/50 z-40 md:hidden;
+}
+
+/* Content wrapper */
+.content-wrapper {
+  @apply flex-1 flex flex-col min-h-screen;
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+@media (min-width: 768px) {
+  .content-wrapper { @apply ml-56; }
+}
+
+/* Main content area */
+.main-content { @apply flex-1; }
+
+/* Content area */
+.section { 
+  @apply max-w-6xl px-4 sm:px-6 lg:px-10 pt-10 pb-20;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* Footer */
+.footer {
+  @apply mt-auto border-t border-gray-200 bg-white px-4 sm:px-6 lg:px-10 py-6;
+}
+.footer p { @apply text-xs text-secondary-400; }
+
+.section-title { @apply text-2xl font-bold text-secondary-900 mb-1; }
+
+.section-lead { @apply text-sm text-secondary-500 mb-8; }
+
+.subsection { @apply mb-10; }
+
+.demo-label { @apply text-xs font-mono text-secondary-400 mb-2; }
+
+/* Demo cards */
+.demo-card { @apply border border-gray-200 rounded-lg overflow-hidden mb-4 min-w-0; }
+
+.demo-preview { 
+  @apply p-6 bg-white;
+  min-width: 0;
+  max-width: 100%;
+}
+
+.demo-preview-dark {
+  @apply p-6 relative z-10;
+  background: linear-gradient(135deg, var(--color-primary-500) 0%, var(--color-primary-400) 40%, var(--color-primary-300) 100%);
+}
+
+.demo-preview-dark::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='1'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+  opacity: 0.06;
+  pointer-events: none;
+}
+
+.code-block {
+  @apply m-0 bg-secondary-900 text-secondary-100 text-xs;
+  tab-size: 2;
+  overflow-x: auto;
+  max-width: 100%;
+  -webkit-overflow-scrolling: touch;
+}
+
+.code-block code { 
+  @apply block px-6 py-4;
+  white-space: pre;
+  min-width: min-content;
+}
+
+/* Overview grid */
+.component-grid { @apply grid grid-cols-2 gap-4 sm:grid-cols-3; }
+
+.grid-card {
+  @apply block rounded-lg border border-gray-200 bg-white p-4 hover:border-primary-300 hover:shadow-sm transition-shadow;
+}
+
+.grid-card-title { @apply text-sm font-semibold text-secondary-900; }
+
+.grid-card-desc { @apply mt-0.5 text-xs text-secondary-400; }

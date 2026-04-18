@@ -1,0 +1,76 @@
+---
+layout: layout.html
+title: Dropdown
+---
+
+<div class="section">
+  <h1 class="section-title">Dropdown</h1>
+  <p class="section-lead">Requires Alpine.js. Accessible with <code class="code">aria-expanded</code> and <code class="code">Escape</code> to close.</p>
+
+  <div class="subsection">
+    <p class="demo-label">Default dropdown with sections</p>
+    <div class="demo-card" style="min-height: 280px;">
+      <div class="demo-preview">
+        <div
+          x-data="{ open: false, toggle() { if (this.open) { return this.close() } this.$refs.button.focus(); this.open = true }, close(focusAfter) { if (!this.open) return; this.open = false; focusAfter && focusAfter.focus() } }"
+          x-on:keydown.escape.prevent.stop="close($refs.button)"
+          x-on:focusin.window="! $refs.panel.contains($event.target) && close()"
+          x-id="['dd-demo']"
+          class="dropdown">
+          <button x-ref="button" x-on:click="toggle()" :aria-expanded="open" :aria-controls="$id('dd-demo')" class="dropdown-trigger">
+            Options
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-gray-400" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" /></svg>
+          </button>
+          <div x-ref="panel" x-show="open" x-transition.origin.top.left x-on:click.outside="close($refs.button)" :id="$id('dd-demo')" class="dropdown-panel dropdown-panel-left">
+            <div class="dropdown-section">
+              <a class="dropdown-item">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="dropdown-item-icon"><path fill-rule="evenodd" d="M7.84 1.804A1 1 0 018.82 1h2.36a1 1 0 01.98.804l.331 1.652a6.993 6.993 0 011.929 1.115l1.598-.54a1 1 0 011.186.447l1.18 2.044a1 1 0 01-.205 1.251l-1.267 1.113a7.047 7.047 0 010 2.228l1.267 1.113a1 1 0 01.206 1.25l-1.18 2.045a1 1 0 01-1.187.447l-1.598-.54a6.993 6.993 0 01-1.929 1.115l-.33 1.652a1 1 0 01-.98.804H8.82a1 1 0 01-.98-.804l-.331-1.652a6.993 6.993 0 01-1.929-1.115l-1.598.54a1 1 0 01-1.186-.447l-1.18-2.044a1 1 0 01.205-1.251l1.267-1.114a7.05 7.05 0 010-2.227L1.821 7.773a1 1 0 01-.206-1.25l1.18-2.045a1 1 0 011.187-.447l1.598.54A6.993 6.993 0 017.51 3.456l.33-1.652zM10 13a3 3 0 100-6 3 3 0 000 6z" clip-rule="evenodd" /></svg>
+                Settings
+              </a>
+              <a class="dropdown-item">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="dropdown-item-icon"><path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zM8.94 6.94a.75.75 0 11-1.061-1.061.75.75 0 011.06 1.06zM10 15a1 1 0 01-1-1v-3a1 1 0 112 0v3a1 1 0 01-1 1z" clip-rule="evenodd" /></svg>
+                Help
+              </a>
+            </div>
+            <div class="dropdown-section">
+              <a class="dropdown-item-danger">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="mr-2.5 h-4 w-4"><path fill-rule="evenodd" d="M3 4.25A2.25 2.25 0 015.25 2h5.5A2.25 2.25 0 0113 4.25v2a.75.75 0 01-1.5 0v-2a.75.75 0 00-.75-.75h-5.5a.75.75 0 00-.75.75v11.5c0 .414.336.75.75.75h5.5a.75.75 0 00.75-.75v-2a.75.75 0 011.5 0v2A2.25 2.25 0 0110.75 18h-5.5A2.25 2.25 0 013 15.75V4.25z" clip-rule="evenodd" /><path fill-rule="evenodd" d="M19 10a.75.75 0 00-.75-.75H8.704l1.048-.943a.75.75 0 10-1.004-1.114l-2.5 2.25a.75.75 0 000 1.114l2.5 2.25a.75.75 0 101.004-1.114l-1.048-.943h9.546A.75.75 0 0019 10z" clip-rule="evenodd" /></svg>
+                Log out
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <pre class="code-block"><code>&lt;div
+  x-data="{ open: false, toggle() { ... }, close(focusAfter) { ... } }"
+  x-on:keydown.escape.prevent.stop="close($refs.button)"
+  x-on:focusin.window="! $refs.panel.contains($event.target) &amp;&amp; close()"
+  x-id="['dd']"
+  class="dropdown"&gt;
+
+  &lt;button x-ref="button" x-on:click="toggle()"
+    :aria-expanded="open" :aria-controls="$id('dd')"
+    class="dropdown-trigger"&gt;
+    Options &lt;svg ...&gt;&lt;/svg&gt;
+  &lt;/button&gt;
+
+  &lt;div x-ref="panel" x-show="open" x-transition.origin.top.left
+    x-on:click.outside="close($refs.button)"
+    :id="$id('dd')"
+    class="dropdown-panel dropdown-panel-left"&gt;
+    &lt;div class="dropdown-section"&gt;
+      &lt;a class="dropdown-item"&gt;
+        &lt;svg class="dropdown-item-icon"&gt;...&lt;/svg&gt; Settings
+      &lt;/a&gt;
+    &lt;/div&gt;
+    &lt;div class="dropdown-section"&gt;
+      &lt;a class="dropdown-item-danger"&gt;Log out&lt;/a&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;!-- Panel positions: dropdown-panel-left, dropdown-panel-right --&gt;
+&lt;!-- Wide panel: add dropdown-panel-wide --&gt;</code></pre>
+    </div>
+  </div>
+</div>
