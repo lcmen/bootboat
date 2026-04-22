@@ -5,13 +5,13 @@ title: Navbar
 
 <div class="section">
   <h1 class="section-title">Navbar</h1>
-  <p class="section-lead">Sticky top bar — brand on the left, actions on the right.</p>
+  <p class="section-lead">Sticky top bar with primary actions and a minimal Alpine-powered account dropdown.</p>
 
   <div class="subsection">
-    <p class="demo-label">.navbar with brand + actions</p>
-    <div class="demo-card">
-      <div class="demo-preview p-0 overflow-hidden">
-        <nav class="navbar" style="position:relative; top:auto;">
+    <p class="demo-label">.navbar with brand, primary action, and interactive dropdown</p>
+    <div class="demo-card overflow-visible">
+      <div class="demo-preview p-0 overflow-visible">
+        <nav class="navbar demo-navbar-reset" x-data="{ open: false }">
           <div class="navbar-inner">
             <a class="navbar-brand">
               <div class="navbar-brand-icon">A</div>
@@ -22,22 +22,77 @@ title: Navbar
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="h-4 w-4"><path d="M10.75 4.75a.75.75 0 00-1.5 0v4.5h-4.5a.75.75 0 000 1.5h4.5v4.5a.75.75 0 001.5 0v-4.5h4.5a.75.75 0 000-1.5h-4.5v-4.5z" /></svg>
                 New
               </button>
-              <button class="btn-icon btn-icon-secondary">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="h-5 w-5"><path d="M10 3a1.5 1.5 0 110 3 1.5 1.5 0 010-3zM10 8.5a1.5 1.5 0 110 3 1.5 1.5 0 010-3zM11.5 15.5a1.5 1.5 0 10-3 0 1.5 1.5 0 003 0z" /></svg>
-              </button>
+              <div class="dropdown">
+                <button x-on:click="open = !open" :aria-expanded="open" aria-controls="navbar-menu" class="btn-icon btn-icon-secondary" aria-label="Open account menu">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="h-5 w-5"><path d="M10 3a1.5 1.5 0 110 3 1.5 1.5 0 010-3zM10 8.5a1.5 1.5 0 110 3 1.5 1.5 0 010-3zM11.5 15.5a1.5 1.5 0 10-3 0 1.5 1.5 0 003 0z" /></svg>
+                </button>
+                <div x-show="open" x-transition.origin.top.right @click.outside="open = false" id="navbar-menu" class="dropdown-panel dropdown-panel-right">
+                  <div class="dropdown-section">
+                    <a class="dropdown-item">
+                      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="dropdown-item-icon"><path fill-rule="evenodd" d="M10 1a3 3 0 100 6 3 3 0 000-6zm-4 8a4 4 0 118 0v1.255a.75.75 0 01-.221.53l-3.25 3.25a.75.75 0 01-1.06 0l-3.248-3.25A.75.75 0 016 10.255V9z" clip-rule="evenodd" /></svg>
+                      Profile
+                    </a>
+                    <a class="dropdown-item">
+                      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="dropdown-item-icon"><path fill-rule="evenodd" d="M7.84 1.804A1 1 0 018.82 1h2.36a1 1 0 01.98.804l.331 1.652a6.993 6.993 0 011.929 1.115l1.598-.54a1 1 0 011.186.447l1.18 2.044a1 1 0 01-.205 1.251l-1.267 1.113a7.047 7.047 0 010 2.228l1.267 1.113a1 1 0 01.206 1.25l-1.18 2.045a1 1 0 01-1.187.447l-1.598-.54a6.993 6.993 0 01-1.929 1.115l-.33 1.652a1 1 0 01-.98.804H8.82a1 1 0 01-.98-.804l-.331-1.652a6.993 6.993 0 01-1.929-1.115l-1.598.54a1 1 0 01-1.186-.447l-1.18-2.044a1 1 0 01.205-1.251l1.267-1.114a7.05 7.05 0 010-2.227L1.821 7.773a1 1 0 01-.206-1.25l1.18-2.045a1 1 0 011.187-.447l1.598.54A6.993 6.993 0 017.51 3.456l.33-1.652zM10 13a3 3 0 100-6 3 3 0 000 6z" clip-rule="evenodd" /></svg>
+                      Settings
+                    </a>
+                  </div>
+                  <div class="dropdown-section">
+                    <a class="dropdown-item-danger">
+                      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="mr-2.5 h-4 w-4"><path fill-rule="evenodd" d="M3 4.25A2.25 2.25 0 015.25 2h5.5A2.25 2.25 0 0113 4.25v2a.75.75 0 01-1.5 0v-2a.75.75 0 00-.75-.75h-5.5a.75.75 0 00-.75.75v11.5c0 .414.336.75.75.75h5.5a.75.75 0 00.75-.75v-2a.75.75 0 011.5 0v2A2.25 2.25 0 0110.75 18h-5.5A2.25 2.25 0 013 15.75V4.25z" clip-rule="evenodd" /><path fill-rule="evenodd" d="M19 10a.75.75 0 00-.75-.75H8.704l1.048-.943a.75.75 0 10-1.004-1.114l-2.5 2.25a.75.75 0 000 1.114l2.5 2.25a.75.75 0 101.004-1.114l-1.048-.943h9.546A.75.75 0 0019 10z" clip-rule="evenodd" /></svg>
+                      Sign out
+                    </a>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </nav>
       </div>
-      <pre class="code-block"><code>&lt;nav class="navbar"&gt;
+      <pre class="code-block"><code>&lt;nav class="navbar" x-data="{ open: false }"&gt;
   &lt;div class="navbar-inner"&gt;
     &lt;a class="navbar-brand"&gt;
       &lt;div class="navbar-brand-icon"&gt;A&lt;/div&gt;
       AppName
     &lt;/a&gt;
     &lt;div class="navbar-actions"&gt;
-      &lt;button class="btn btn-primary"&gt;New&lt;/button&gt;
-      &lt;button class="btn-icon btn-icon-secondary"&gt;...&lt;/button&gt;
+      &lt;button class="btn btn-primary"&gt;
+        &lt;svg class="h-4 w-4"&gt;...&lt;/svg&gt;
+        New
+      &lt;/button&gt;
+      &lt;div class="dropdown"&gt;
+        &lt;button
+          x-on:click="open = !open"
+          :aria-expanded="open"
+          aria-controls="navbar-menu"
+          class="btn-icon btn-icon-secondary"
+          aria-label="Open account menu"&gt;
+          &lt;svg class="h-5 w-5"&gt;...&lt;/svg&gt;
+        &lt;/button&gt;
+        &lt;div
+          x-show="open"
+          x-transition.origin.top.right
+          @click.outside="open = false"
+          id="navbar-menu"
+          class="dropdown-panel dropdown-panel-right"&gt;
+          &lt;div class="dropdown-section"&gt;
+            &lt;a class="dropdown-item"&gt;
+              &lt;svg class="dropdown-item-icon"&gt;...&lt;/svg&gt;
+              Profile
+            &lt;/a&gt;
+            &lt;a class="dropdown-item"&gt;
+              &lt;svg class="dropdown-item-icon"&gt;...&lt;/svg&gt;
+              Settings
+            &lt;/a&gt;
+          &lt;/div&gt;
+          &lt;div class="dropdown-section"&gt;
+            &lt;a class="dropdown-item-danger"&gt;
+              &lt;svg class="mr-2.5 h-4 w-4"&gt;...&lt;/svg&gt;
+              Sign out
+            &lt;/a&gt;
+          &lt;/div&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
     &lt;/div&gt;
   &lt;/div&gt;
 &lt;/nav&gt;</code></pre>

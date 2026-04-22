@@ -1,0 +1,84 @@
+---
+layout: layout.html
+title: Utilities
+---
+
+<div class="section">
+  <h1 class="section-title">Utilities</h1>
+  <p class="section-lead">Page scaffolding helpers and semantic border utilities.</p>
+
+  <div class="subsection">
+    <h2 class="h5 mb-4">Utility helpers</h2>
+
+    <p class="demo-label">.flex-between</p>
+    <div class="demo-card">
+      <div class="demo-preview">
+        <div class="flex-between rounded-lg border-muted bg-white px-4 py-3">
+          <div>
+            <h3 class="h5">Project settings</h3>
+            <p class="text-muted">Updated 2 minutes ago</p>
+          </div>
+          <button class="btn btn-secondary btn-sm">Edit</button>
+        </div>
+      </div>
+      <pre class="code-block"><code>&lt;div class="flex-between"&gt;
+  &lt;div&gt;...&lt;/div&gt;
+  &lt;button class="btn btn-secondary btn-sm"&gt;Edit&lt;/button&gt;
+&lt;/div&gt;</code></pre>
+    </div>
+
+    <p class="demo-label mt-6">.center-page</p>
+    <div class="demo-card">
+      <div class="demo-preview">
+        <div class="center-page p-0">
+          <div class="card-sm">
+            <div class="card-body">
+              <h3 class="h4">Centered card</h3>
+              <p class="text-lead">Use for empty states, login views, and focused workflows.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <pre class="code-block"><code>&lt;div class="center-page"&gt;
+  &lt;div class="card-sm"&gt;...&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+    </div>
+
+    <p class="demo-label mt-6">.page-shell</p>
+    <div class="demo-card">
+      <div class="demo-preview">
+        <p class="text-body">
+          Apply <code class="code">.page-shell</code> to your app root so pages stretch to the viewport and keep footers pinned to the bottom.
+        </p>
+      </div>
+      <pre class="code-block"><code>&lt;div class="page-shell"&gt;
+  &lt;header&gt;...&lt;/header&gt;
+  &lt;main class="center-page"&gt;...&lt;/main&gt;
+  &lt;footer&gt;...&lt;/footer&gt;
+&lt;/div&gt;</code></pre>
+    </div>
+  </div>
+
+  <div class="subsection mt-10">
+    <h2 class="h5 mb-4">Borders</h2>
+    <p class="demo-label">Semantic border colors — pair with Tailwind utilities for full component styling.</p>
+    <div class="demo-card">
+      <div class="demo-preview">
+        <div class="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
+          <div class="rounded-lg border-primary bg-white p-4 text-sm text-secondary-700">border-primary</div>
+          <div class="rounded-lg border-secondary bg-white p-4 text-sm text-secondary-700">border-secondary</div>
+          <div class="rounded-lg border-muted bg-white p-4 text-sm text-secondary-700">border-muted</div>
+          <div class="rounded-lg border-light bg-white p-4 text-sm text-secondary-700">border-light</div>
+          <div class="rounded-lg border-success bg-white p-4 text-sm text-secondary-700">border-success</div>
+          <div class="rounded-lg border-info bg-white p-4 text-sm text-secondary-700">border-info</div>
+          <div class="rounded-lg border-warning bg-white p-4 text-sm text-secondary-700">border-warning</div>
+          <div class="rounded-lg border-danger bg-white p-4 text-sm text-secondary-700">border-danger</div>
+          <div class="rounded-lg border-dark bg-white p-4 text-sm text-secondary-700">border-dark</div>
+        </div>
+      </div>
+      <pre class="code-block"><code>&lt;div class="border-primary"&gt;...&lt;/div&gt;
+&lt;div class="border-secondary"&gt;...&lt;/div&gt;
+&lt;div class="border-muted"&gt;...&lt;/div&gt;</code></pre>
+    </div>
+  </div>
+</div>

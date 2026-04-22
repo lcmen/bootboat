@@ -68,6 +68,7 @@ Then use classes in your HTML. Buttons use a base + variant pattern (like Bootst
 | Button Group| `.btn-group`, `.btn-group-item`, `.btn-group-item-active`, `.btn-group-label` |
 | Forms       | `.form-input`, `.form-input-error`, `.form-select`, `.form-checkbox`, `.form-radio`, `.form-textarea`, `.form-textarea-error`, `.form-file`, `.form-file-dropzone`, `.form-toggle`, `.form-toggle-track`, `.form-toggle-track-sm`, `.form-toggle-track-lg`, `.form-label`, `.form-label-required`, `.form-help`, `.form-error`, `.form-group`, `.form-row`, `.form-addon`, `.form-addon-left`, `.form-addon-right`, `.has-addon-left`, `.has-addon-right` |
 | Cards       | `.card`, `.card-body`, `.card-sm`, `.card-md`, `.card-lg` |
+| Accordion   | `.accordion`, `.accordion-bordered`, `.accordion-item`, `.accordion-trigger`, `.accordion-panel`, `.accordion-icon` |
 | Navbar      | `.navbar`, `.navbar-inner`, `.navbar-brand`, `.navbar-brand-icon`, `.navbar-actions` |
 | Dropdown    | `.dropdown`, `.dropdown-trigger`, `.dropdown-panel`, `.dropdown-panel-left`, `.dropdown-panel-right`, `.dropdown-panel-wide`, `.dropdown-section`, `.dropdown-item`, `.dropdown-item-danger`, `.dropdown-item-icon` |
 | Modal       | `.modal`, `.modal-lg`, `.modal-xl`, `.modal-overlay`, `.modal-wrapper`, `.modal-body`, `.modal-close`, `.modal-footer` |
@@ -80,7 +81,7 @@ Then use classes in your HTML. Buttons use a base + variant pattern (like Bootst
 | Media Object| `.media`, `.media-center`, `.media-bottom`, `.media-img`, `.media-img-lg`, `.media-body` |
 | Pagination  | `.pagination`, `.pagination-item`, `.pagination-item-active`, `.pagination-prev`, `.pagination-next`, `.pagination-icon` |
 | Dividers    | `.divider`, `.divider-text`, `.divider-line` |
-| Layout      | `.page-shell`, `.center-page`, `.flex-between` |
+| Utilities   | `.page-shell`, `.center-page`, `.flex-between` |
 | Borders     | `.border-primary`, `-secondary`, `-danger`, `-warning`, `-success`, `-info`, `-dark`, `-light`, `-muted` |
 
 ## Customization

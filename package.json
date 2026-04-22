@@ -1,11 +1,13 @@
 {
   "private": true,
+  "type": "module",
   "scripts": {
-    "build": "npm run clean && npm run build:css && npm run build:11ty",
+    "build": "npm run check:docs && npm run clean && npm run build:css && npm run build:11ty",
     "build:css": "npx @tailwindcss/cli -i website/assets/index.css -o dist/assets/index.css --minify",
     "build:11ty": "npx @11ty/eleventy --input=website --output=dist",
     "clean": "rm -rf dist",
     "dev": "concurrently npm:watch:css npm:watch:11ty",
+    "check:docs": "node scripts/check-docs.mjs",
     "watch:css": "npx @tailwindcss/cli -i website/assets/index.css -o dist/assets/index.css --watch",
     "watch:11ty": "npx @11ty/eleventy --input=website --output=dist --serve --watch"
   },

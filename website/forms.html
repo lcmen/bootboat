@@ -22,7 +22,7 @@ title: Forms
             <p class="form-help">This is a help message.</p>
           </div>
           <div>
-            <label class="form-label_required">With validation error</label>
+            <label class="form-label-required">With validation error</label>
             <input type="email" value="not-an-email" class="form-input-error" />
             <p class="form-error">Please enter a valid email address.</p>
           </div>
@@ -103,12 +103,26 @@ title: Forms
     <p class="demo-label mt-6">File upload — .form-file, .form-file-dropzone</p>
     <div class="demo-card">
       <div class="demo-preview">
-        <div class="max-w-sm">
-          <label class="form-label">Upload file</label>
-          <input type="file" class="form-file" />
+        <div class="max-w-sm space-y-4">
+          <div>
+            <label class="form-label">Upload file</label>
+            <input type="file" class="form-file" />
+          </div>
+          <label class="form-file-dropzone demo-file-dropzone">
+            <div class="text-center">
+              <p class="text-sm font-medium text-secondary-700">Drop files here</p>
+              <p class="text-xs text-secondary-400">or click to browse</p>
+            </div>
+          </label>
         </div>
       </div>
-      <pre class="code-block"><code>&lt;input type="file" class="form-file" /&gt;</code></pre>
+      <pre class="code-block"><code>&lt;input type="file" class="form-file" /&gt;
+
+&lt;label class="form-file-dropzone"&gt;
+  &lt;div class="text-center"&gt;
+    Drop files here
+  &lt;/div&gt;
+&lt;/label&gt;</code></pre>
     </div>
 
     <p class="demo-label mt-6">Toggle switch — .form-toggle + .form-toggle-track</p>
@@ -135,12 +149,28 @@ title: Forms
           <span class="ml-3 text-sm text-gray-700">Large</span>
         </label>
       </div>
-      <pre class="code-block"><code>&lt;!-- Sizes: form-toggle-track-sm / form-toggle-track / form-toggle-track-lg --&gt;
+    <pre class="code-block"><code>&lt;!-- Sizes: form-toggle-track-sm / form-toggle-track / form-toggle-track-lg --&gt;
 &lt;label class="form-toggle"&gt;
   &lt;input type="checkbox" checked class="peer sr-only" /&gt;
   &lt;div class="form-toggle-track"&gt;&lt;/div&gt;
   &lt;span class="ml-3 text-sm"&gt;Enabled&lt;/span&gt;
 &lt;/label&gt;</code></pre>
+    </div>
+
+    <p class="demo-label mt-6">Inline form row — .form-inline</p>
+    <div class="demo-card">
+      <div class="demo-preview">
+        <div class="max-w-md">
+          <div class="form-inline">
+            <input type="email" placeholder="Search customers" class="form-input has-addon-right" />
+            <button class="btn btn-primary rounded-l-none">Search</button>
+          </div>
+        </div>
+      </div>
+      <pre class="code-block"><code>&lt;div class="form-inline"&gt;
+  &lt;input class="form-input has-addon-right" /&gt;
+  &lt;button class="btn btn-primary rounded-l-none"&gt;Search&lt;/button&gt;
+&lt;/div&gt;</code></pre>
     </div>
 
     <p class="demo-label mt-6">Input addons — .form-addon</p>
@@ -155,6 +185,10 @@ title: Forms
             <input type="text" placeholder="username" class="form-input has-addon-right" />
             <span class="form-addon-right">@example.com</span>
           </div>
+          <div class="form-addon">
+            <span class="form-addon-left form-addon-disabled">USD</span>
+            <input type="text" placeholder="0.00" class="form-input has-addon-left" disabled />
+          </div>
         </div>
       </div>
       <pre class="code-block"><code>&lt;div class="form-addon"&gt;
@@ -165,10 +199,15 @@ title: Forms
 &lt;div class="form-addon"&gt;
   &lt;input type="text" class="form-input has-addon-right" /&gt;
   &lt;span class="form-addon-right"&gt;@example.com&lt;/span&gt;
+&lt;/div&gt;
+
+&lt;div class="form-addon"&gt;
+  &lt;span class="form-addon-left form-addon-disabled"&gt;USD&lt;/span&gt;
+  &lt;input type="text" class="form-input has-addon-left" disabled /&gt;
 &lt;/div&gt;</code></pre>
     </div>
 
-    <p class="demo-label mt-6">Layout — .form-group (space-y-4), .form-row (2-col grid)</p>
+    <p class="demo-label mt-6">Utilities — .form-group (space-y-4), .form-row (2-col grid)</p>
     <div class="demo-card">
       <div class="demo-preview">
         <div class="max-w-md">

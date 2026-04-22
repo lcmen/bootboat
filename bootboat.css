@@ -389,6 +389,35 @@ label[for],
  * 6. NAVBAR
  * ───────────────────────────────────────────────────────────── */
 
+@utility accordion {
+  :where(&) { @apply divide-y divide-gray-100; }
+}
+@utility accordion-bordered {
+  :where(&) { @apply rounded-lg border-light bg-white shadow-sm; }
+  & .accordion-trigger { @apply px-4; }
+  & .accordion-panel { @apply border-t border-gray-100 p-4; }
+  & .accordion-item[open] .accordion-trigger { @apply bg-gray-50; }
+}
+@utility accordion-item {
+  & > summary::-webkit-details-marker { display: none; }
+  & > summary { list-style: none; }
+  &[open] .accordion-icon { @apply rotate-180; }
+}
+@utility accordion-trigger {
+  :where(&) { @apply flex w-full cursor-pointer list-none items-center justify-between gap-3 py-4 text-left text-lg font-medium text-secondary-900; }
+}
+@utility accordion-panel {
+  :where(&) { @apply pb-4 text-secondary-500; }
+}
+@utility accordion-icon {
+  :where(&) { @apply h-5 w-5 shrink-0 text-secondary-500 transition-all duration-300; }
+}
+
+
+/* ─────────────────────────────────────────────────────────────
+ * 7. NAVBAR
+ * ───────────────────────────────────────────────────────────── */
+
 @utility navbar {
   :where(&) { @apply sticky top-0 z-30 border-b border-secondary-200 bg-white; }
 }
@@ -407,7 +436,7 @@ label[for],
 
 
 /* ─────────────────────────────────────────────────────────────
- * 7. DROPDOWN
+ * 8. DROPDOWN
  * ───────────────────────────────────────────────────────────── */
 
 @utility dropdown {
@@ -448,7 +477,7 @@ label[for],
 
 
 /* ─────────────────────────────────────────────────────────────
- * 8. MODAL
+ * 9. MODAL
  * ───────────────────────────────────────────────────────────── */
 
 @utility modal-overlay {
@@ -479,7 +508,7 @@ label[for],
 
 
 /* ─────────────────────────────────────────────────────────────
- * 9. ALERT / FLASH MESSAGE
+ * 10. ALERT / FLASH MESSAGE
  * ───────────────────────────────────────────────────────────── */
 
 @utility alert {
@@ -503,7 +532,7 @@ label[for],
 
 
 /* ─────────────────────────────────────────────────────────────
- * 10. BADGE
+ * 11. BADGE
  * ───────────────────────────────────────────────────────────── */
 
 @utility badge {
@@ -542,7 +571,7 @@ label[for],
 
 
 /* ─────────────────────────────────────────────────────────────
- * 11. DIVIDER
+ * 12. DIVIDER
  * ───────────────────────────────────────────────────────────── */
 
 @utility divider {
@@ -561,7 +590,7 @@ label[for],
 
 
 /* ─────────────────────────────────────────────────────────────
- * 12. TABLE
+ * 13. TABLE
  * ───────────────────────────────────────────────────────────── */
 
 @utility table-wrapper {
@@ -594,7 +623,7 @@ label[for],
 
 
 /* ─────────────────────────────────────────────────────────────
- * 13. TABS
+ * 14. TABS
  * ───────────────────────────────────────────────────────────── */
 
 @utility tab-list {
@@ -623,7 +652,7 @@ label[for],
 
 
 /* ─────────────────────────────────────────────────────────────
- * 14. BORDERS — semantic border utilities (border + color)
+ * 15. BORDERS — semantic border utilities (border + color)
  * ───────────────────────────────────────────────────────────── */
 
 @utility border-secondary {
@@ -656,7 +685,7 @@ label[for],
 
 
 /* ─────────────────────────────────────────────────────────────
- * 15. BREADCRUMB
+ * 16. BREADCRUMB
  * ───────────────────────────────────────────────────────────── */
 
 @utility breadcrumb {
@@ -678,7 +707,7 @@ label[for],
 
 
 /* ─────────────────────────────────────────────────────────────
- * 16. LIST
+ * 17. LIST
  * ───────────────────────────────────────────────────────────── */
 
 @utility list-icon {
@@ -699,7 +728,7 @@ label[for],
 
 
 /* ─────────────────────────────────────────────────────────────
- * 17. MEDIA OBJECT
+ * 18. MEDIA OBJECT
  * ───────────────────────────────────────────────────────────── */
 
 @utility media {
@@ -723,7 +752,7 @@ label[for],
 
 
 /* ─────────────────────────────────────────────────────────────
- * 18. PAGINATION
+ * 19. PAGINATION
  * ───────────────────────────────────────────────────────────── */
 
 @utility pagination {
@@ -750,7 +779,7 @@ label[for],
 
 
 /* ─────────────────────────────────────────────────────────────
- * 19. LAYOUT UTILITIES
+ * 20. LAYOUT UTILITIES
  * ───────────────────────────────────────────────────────────── */
 
 @utility flex-between {

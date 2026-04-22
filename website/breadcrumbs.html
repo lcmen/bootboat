@@ -1,0 +1,74 @@
+---
+layout: layout.html
+title: Breadcrumbs
+---
+
+<div class="section">
+  <h1 class="section-title">Breadcrumbs</h1>
+  <p class="section-lead">Breadcrumb trails with slash, chevron, and background styles.</p>
+
+  <div class="subsection">
+    <p class="demo-label">Default (with slashes)</p>
+    <div class="demo-card">
+      <div class="demo-preview">
+        <nav aria-label="breadcrumb">
+          <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="#">Home</a></li>
+            <li class="breadcrumb-separator"><span>/</span> <a href="#" class="breadcrumb-item">Components</a></li>
+            <li class="breadcrumb-separator"><span>/</span> <span class="breadcrumb-current">Breadcrumbs</span></li>
+          </ol>
+        </nav>
+      </div>
+      <pre class="code-block"><code>&lt;nav aria-label="breadcrumb"&gt;
+  &lt;ol class="breadcrumb"&gt;
+    &lt;li class="breadcrumb-item"&gt;&lt;a href="#"&gt;Home&lt;/a&gt;&lt;/li&gt;
+    &lt;li class="breadcrumb-separator"&gt;
+      &lt;span&gt;/&lt;/span&gt;
+      &lt;a href="#" class="breadcrumb-item"&gt;Components&lt;/a&gt;
+    &lt;/li&gt;
+    &lt;li class="breadcrumb-separator"&gt;
+      &lt;span&gt;/&lt;/span&gt;
+      &lt;span class="breadcrumb-current"&gt;Breadcrumbs&lt;/span&gt;
+    &lt;/li&gt;
+  &lt;/ol&gt;
+&lt;/nav&gt;</code></pre>
+    </div>
+
+    <p class="demo-label mt-6">With chevrons</p>
+    <div class="demo-card">
+      <div class="demo-preview">
+        <nav aria-label="breadcrumb">
+          <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="#">Home</a></li>
+            <li class="breadcrumb-separator">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="h-4 w-4"><path fill-rule="evenodd" d="M7.21 14.77a.75.75 0 01.02-1.06L11.168 10 7.23 6.29a.75.75 0 111.04-1.08l4.5 4.25a.75.75 0 010 1.08l-4.5 4.25a.75.75 0 01-1.06-.02z" clip-rule="evenodd" /></svg>
+              <a href="#" class="breadcrumb-item">Components</a>
+            </li>
+            <li class="breadcrumb-separator">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="h-4 w-4"><path fill-rule="evenodd" d="M7.21 14.77a.75.75 0 01.02-1.06L11.168 10 7.23 6.29a.75.75 0 111.04-1.08l4.5 4.25a.75.75 0 010 1.08l-4.5 4.25a.75.75 0 01-1.06-.02z" clip-rule="evenodd" /></svg>
+              <span class="breadcrumb-current">Breadcrumbs</span>
+            </li>
+          </ol>
+        </nav>
+      </div>
+      <pre class="code-block"><code>&lt;li class="breadcrumb-separator"&gt;
+  &lt;svg class="h-4 w-4"&gt;...&lt;/svg&gt;
+  &lt;a href="#" class="breadcrumb-item"&gt;Components&lt;/a&gt;
+&lt;/li&gt;</code></pre>
+    </div>
+
+    <p class="demo-label mt-6">With background — .breadcrumb-bg</p>
+    <div class="demo-card">
+      <div class="demo-preview">
+        <nav aria-label="breadcrumb">
+          <ol class="breadcrumb-bg">
+            <li class="breadcrumb-item"><a href="#">Home</a></li>
+            <li class="breadcrumb-separator"><span>/</span> <a href="#" class="breadcrumb-item">Components</a></li>
+            <li class="breadcrumb-separator"><span>/</span> <span class="breadcrumb-current">Breadcrumbs</span></li>
+          </ol>
+        </nav>
+      </div>
+      <pre class="code-block"><code>&lt;ol class="breadcrumb-bg"&gt;...&lt;/ol&gt;</code></pre>
+    </div>
+  </div>
+</div>

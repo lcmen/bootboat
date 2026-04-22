@@ -1,0 +1,56 @@
+---
+layout: layout.html
+title: Tabs
+---
+
+<div class="section">
+  <h1 class="section-title">Tabs</h1>
+  <p class="section-lead">Underline-style tabs powered by Alpine.js.</p>
+
+  <div class="subsection">
+    <p class="demo-label">Underline-style tabs — requires Alpine.js</p>
+    <div class="demo-card">
+      <div class="demo-preview" x-data="{ tab: 0 }">
+        <div class="tab-list">
+          <ul class="tab-list-inner">
+            <li><a @click="tab = 0" class="tab-item" :class="tab === 0 && 'tab-item-active'">Profile</a></li>
+            <li><a @click="tab = 1" class="tab-item" :class="tab === 1 && 'tab-item-active'">Settings</a></li>
+            <li>
+              <a @click="tab = 2" class="tab-item" :class="tab === 2 && 'tab-item-active'">
+                Notifications
+                <span class="tab-badge">8</span>
+              </a>
+            </li>
+            <li><a @click="tab = 3" class="tab-item" :class="tab === 3 && 'tab-item-active'">Billing</a></li>
+          </ul>
+        </div>
+        <div class="tab-panel">
+          <div x-show="tab === 0"><p class="text-body">Profile content.</p></div>
+          <div x-show="tab === 1"><p class="text-body">Settings content.</p></div>
+          <div x-show="tab === 2"><p class="text-body">8 unread notifications.</p></div>
+          <div x-show="tab === 3"><p class="text-body">Billing content.</p></div>
+        </div>
+      </div>
+      <pre class="code-block"><code>&lt;div x-data="{ tab: 0 }"&gt;
+  &lt;div class="tab-list"&gt;
+    &lt;ul class="tab-list-inner"&gt;
+      &lt;li&gt;
+        &lt;a @click="tab = 0" class="tab-item" :class="tab === 0 &amp;&amp; 'tab-item-active'"&gt;
+          Profile
+        &lt;/a&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;a @click="tab = 1" class="tab-item" :class="tab === 1 &amp;&amp; 'tab-item-active'"&gt;
+          Notifications &lt;span class="tab-badge"&gt;8&lt;/span&gt;
+        &lt;/a&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/div&gt;
+  &lt;div class="tab-panel"&gt;
+    &lt;div x-show="tab === 0"&gt;Profile content.&lt;/div&gt;
+    &lt;div x-show="tab === 1"&gt;Notifications content.&lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+    </div>
+  </div>
+</div>

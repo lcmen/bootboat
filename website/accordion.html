@@ -1,0 +1,141 @@
+---
+layout: layout.html
+title: Accordion
+---
+
+<div class="section">
+  <h1 class="section-title">Accordion</h1>
+  <p class="section-lead">Collapsible content sections using native <code class="code">details</code>/<code class="code">summary</code> semantics. The default matches Sailboat's simple accordion, with a bordered variant for boxed layouts.</p>
+
+  <div class="subsection">
+    <p class="demo-label">Default accordion</p>
+    <div class="demo-card">
+      <div class="demo-preview">
+        <div class="max-w-2xl">
+          <div class="accordion">
+            <details class="accordion-item" open>
+              <summary class="accordion-trigger">
+                Accordion item 01
+                <div class="text-secondary-500">
+                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="accordion-icon">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
+                  </svg>
+                </div>
+              </summary>
+              <div class="accordion-panel">
+                This is the first item's accordion body.
+              </div>
+            </details>
+
+            <details class="accordion-item">
+              <summary class="accordion-trigger">
+                Accordion item 02
+                <div class="text-secondary-500">
+                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="accordion-icon">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
+                  </svg>
+                </div>
+              </summary>
+              <div class="accordion-panel">
+                This is the second item's accordion body.
+              </div>
+            </details>
+
+            <details class="accordion-item">
+              <summary class="accordion-trigger">
+                Accordion item 03
+                <div class="text-secondary-500">
+                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="accordion-icon">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
+                  </svg>
+                </div>
+              </summary>
+              <div class="accordion-panel">
+                This is the third item's accordion body.
+              </div>
+            </details>
+          </div>
+        </div>
+      </div>
+      <pre class="code-block"><code>&lt;div class="accordion"&gt;
+  &lt;details class="accordion-item" open&gt;
+    &lt;summary class="accordion-trigger"&gt;
+      Accordion item 01
+      &lt;div class="text-secondary-500"&gt;
+        &lt;svg class="accordion-icon"&gt;...&lt;/svg&gt;
+      &lt;/div&gt;
+    &lt;/summary&gt;
+    &lt;div class="accordion-panel"&gt;
+      This is the first item's accordion body.
+    &lt;/div&gt;
+  &lt;/details&gt;
+&lt;/div&gt;</code></pre>
+    </div>
+  </div>
+
+  <div class="subsection mt-10">
+    <p class="demo-label">Bordered variant — add .accordion-bordered</p>
+    <div class="demo-card">
+      <div class="demo-preview">
+        <div class="max-w-2xl">
+          <div class="accordion accordion-bordered">
+            <details class="accordion-item" open>
+              <summary class="accordion-trigger">
+                Accordion item 01
+                <div class="text-secondary-500">
+                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="accordion-icon">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
+                  </svg>
+                </div>
+              </summary>
+              <div class="accordion-panel">
+                This is the first item's accordion body.
+              </div>
+            </details>
+
+            <details class="accordion-item">
+              <summary class="accordion-trigger">
+                Accordion item 02
+                <div class="text-secondary-500">
+                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="accordion-icon">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
+                  </svg>
+                </div>
+              </summary>
+              <div class="accordion-panel">
+                This is the second item's accordion body.
+              </div>
+            </details>
+
+            <details class="accordion-item">
+              <summary class="accordion-trigger">
+                Accordion item 03
+                <div class="text-secondary-500">
+                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="accordion-icon">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
+                  </svg>
+                </div>
+              </summary>
+              <div class="accordion-panel">
+                This is the third item's accordion body.
+              </div>
+            </details>
+          </div>
+        </div>
+      </div>
+      <pre class="code-block"><code>&lt;div class="accordion accordion-bordered"&gt;
+  &lt;details class="accordion-item" open&gt;
+    &lt;summary class="accordion-trigger"&gt;
+      Accordion item 01
+      &lt;div class="text-secondary-500"&gt;
+        &lt;svg class="accordion-icon"&gt;...&lt;/svg&gt;
+      &lt;/div&gt;
+    &lt;/summary&gt;
+    &lt;div class="accordion-panel"&gt;
+      This is the first item's accordion body.
+    &lt;/div&gt;
+  &lt;/details&gt;
+&lt;/div&gt;</code></pre>
+    </div>
+  </div>
+</div>

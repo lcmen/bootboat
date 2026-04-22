@@ -9,9 +9,13 @@ title: Alerts
 
   <div class="subsection">
     <h2 class="h5 mb-4">Alerts</h2>
-    <p class="demo-label">Four color variants — add .alert-icon to a leading SVG</p>
+    <p class="demo-label">Base alert + four color variants — add .alert-icon to a leading SVG</p>
     <div class="demo-card">
       <div class="demo-preview space-y-3">
+        <div class="alert border-muted bg-white text-secondary-700">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="alert-icon text-secondary-400"><path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a.75.75 0 000 1.5h.253a.25.25 0 01.244.304l-.459 2.066A1.75 1.75 0 0010.747 15H11a.75.75 0 000-1.5h-.253a.25.25 0 01-.244-.304l.459-2.066A1.75 1.75 0 009.253 9H9z" clip-rule="evenodd" /></svg>
+          <div><b>Base:</b> Use <code class="code">.alert</code> as the wrapper, then add your own colors.</div>
+        </div>
         <div class="alert-info">
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="alert-icon"><path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a.75.75 0 000 1.5h.253a.25.25 0 01.244.304l-.459 2.066A1.75 1.75 0 0010.747 15H11a.75.75 0 000-1.5h-.253a.25.25 0 01-.244-.304l.459-2.066A1.75 1.75 0 009.253 9H9z" clip-rule="evenodd" /></svg>
           <div><b>Info:</b> This is an informational message.</div>
@@ -29,7 +33,13 @@ title: Alerts
           <div><b>Error:</b> Something went wrong. Please try again.</div>
         </div>
       </div>
-      <pre class="code-block"><code>&lt;!-- Variants: alert-info, alert-success, alert-warning, alert-danger --&gt;
+      <pre class="code-block"><code>&lt;!-- Base wrapper --&gt;
+&lt;div class="alert border-muted bg-white text-secondary-700"&gt;
+  &lt;svg class="alert-icon"&gt;...&lt;/svg&gt;
+  &lt;div&gt;&lt;b&gt;Base:&lt;/b&gt; Use the wrapper, then add your own colors.&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;!-- Variants: alert-info, alert-success, alert-warning, alert-danger --&gt;
 &lt;div class="alert-info"&gt;
   &lt;svg class="alert-icon"&gt;...&lt;/svg&gt;
   &lt;div&gt;&lt;b&gt;Info:&lt;/b&gt; Message.&lt;/div&gt;
@@ -40,9 +50,10 @@ title: Alerts
   <div class="subsection mt-10">
     <h2 class="h5 mb-4">Badges</h2>
 
-    <p class="demo-label">Pill (default) — seven color variants</p>
+    <p class="demo-label">Base badge + seven color variants</p>
     <div class="demo-card">
       <div class="demo-preview flex flex-wrap gap-2">
+        <span class="badge border-muted bg-white text-secondary-700">Base</span>
         <span class="badge-primary">Primary</span>
         <span class="badge-success">Success</span>
         <span class="badge-warning">Warning</span>
@@ -51,7 +62,8 @@ title: Alerts
         <span class="badge-gray">Gray</span>
         <span class="badge-dark">Dark</span>
       </div>
-      <pre class="code-block"><code>&lt;span class="badge-primary"&gt;Primary&lt;/span&gt;
+      <pre class="code-block"><code>&lt;span class="badge border-muted bg-white text-secondary-700"&gt;Base&lt;/span&gt;
+&lt;span class="badge-primary"&gt;Primary&lt;/span&gt;
 &lt;span class="badge-success"&gt;Success&lt;/span&gt;
 &lt;span class="badge-warning"&gt;Warning&lt;/span&gt;
 &lt;span class="badge-danger"&gt;Danger&lt;/span&gt;
