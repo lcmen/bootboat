@@ -5,18 +5,18 @@ title: Typography
 
 <div class="section">
   <h1 class="section-title">Typography</h1>
-  <p class="section-lead">Headings, body text, links, and light variants for dark backgrounds.</p>
+  <p class="section-lead">Heading scale and links. Pair heading utilities with Tailwind color utilities as needed.</p>
 
   <div class="subsection">
     <p class="demo-label">.h1 — .h6</p>
     <div class="demo-card">
       <div class="demo-preview space-y-2">
-        <div class="h1">Heading 1</div>
-        <div class="h2">Heading 2</div>
-        <div class="h3">Heading 3</div>
-        <div class="h4">Heading 4</div>
-        <div class="h5">Heading 5</div>
-        <div class="h6">Heading 6</div>
+        <div class="h1 text-secondary-900">Heading 1</div>
+        <div class="h2 text-secondary-900">Heading 2</div>
+        <div class="h3 text-secondary-900">Heading 3</div>
+        <div class="h4 text-secondary-900">Heading 4</div>
+        <div class="h5 text-secondary-900">Heading 5</div>
+        <div class="h6 text-secondary-900">Heading 6</div>
       </div>
       <pre class="code-block"><code>&lt;div class="h1"&gt;Heading 1&lt;/div&gt;
 &lt;div class="h2"&gt;Heading 2&lt;/div&gt;
@@ -26,46 +26,18 @@ title: Typography
 &lt;div class="h6"&gt;Heading 6&lt;/div&gt;</code></pre>
     </div>
 
-    <p class="demo-label mt-6">.h1-light — .h3-light (for dark backgrounds)</p>
-    <div class="demo-card">
-      <div class="demo-preview-dark space-y-2 relative z-10">
-        <div class="h1-light">Light heading 1</div>
-        <div class="h2-light">Light heading 2</div>
-        <div class="h3-light">Light heading 3</div>
-      </div>
-      <pre class="code-block"><code>&lt;div class="h1-light"&gt;Light heading 1&lt;/div&gt;
-&lt;div class="h2-light"&gt;Light heading 2&lt;/div&gt;
-&lt;div class="h3-light"&gt;Light heading 3&lt;/div&gt;</code></pre>
-    </div>
-
-    <p class="demo-label mt-6">.text-body, .text-body-lg, .text-body-xs, .text-muted, .text-lead</p>
-    <div class="demo-card">
-      <div class="demo-preview space-y-2">
-        <p class="text-body">Body text — default paragraph style</p>
-        <p class="text-body-lg">Body large — slightly bigger paragraphs</p>
-        <p class="text-body-xs">Body extra small — fine print and metadata</p>
-        <p class="text-muted">Muted text — de-emphasized content</p>
-        <p class="text-lead">Lead text — subtitle below a heading</p>
-      </div>
-      <pre class="code-block"><code>&lt;p class="text-body"&gt;Body text&lt;/p&gt;
-&lt;p class="text-body-lg"&gt;Body large&lt;/p&gt;
-&lt;p class="text-body-xs"&gt;Body extra small&lt;/p&gt;
-&lt;p class="text-muted"&gt;Muted text&lt;/p&gt;
-&lt;p class="text-lead"&gt;Lead text&lt;/p&gt;</code></pre>
-    </div>
-
     <p class="demo-label mt-6">.link, .link-sm, .link-xs, .link-danger</p>
     <div class="demo-card">
       <div class="demo-preview space-y-2">
         <p><a class="link">Standard link</a></p>
-        <p><a class="link-sm">Small link</a> — same weight, 14px</p>
-        <p><a class="link-xs">Extra-small link</a> — 12px, good for "Forgot password?"</p>
-        <p><a class="link-danger">Danger link</a></p>
+        <p><a class="link link-sm">Small link</a> — same weight, 14px</p>
+        <p><a class="link link-xs">Extra-small link</a> — 12px, good for "Forgot password?"</p>
+        <p><a class="link link-danger">Danger link</a></p>
       </div>
       <pre class="code-block"><code>&lt;a class="link"&gt;Standard link&lt;/a&gt;
-&lt;a class="link-sm"&gt;Small link&lt;/a&gt;
-&lt;a class="link-xs"&gt;Extra-small link&lt;/a&gt;
-&lt;a class="link-danger"&gt;Danger link&lt;/a&gt;</code></pre>
+&lt;a class="link link-sm"&gt;Small link&lt;/a&gt;
+&lt;a class="link link-xs"&gt;Extra-small link&lt;/a&gt;
+&lt;a class="link link-danger"&gt;Danger link&lt;/a&gt;</code></pre>
     </div>
   </div>
 </div>

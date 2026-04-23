@@ -5,111 +5,115 @@ title: Tables
 
 <div class="section">
   <h1 class="section-title">Tables</h1>
-  <p class="section-lead">Wrap in <code class="code">.table-wrapper</code> for rounded borders + horizontal scroll. Add <code class="code">.table-striped</code> or <code class="code">.table-hover</code> per row.</p>
+  <p class="section-lead">Use <code class="code">.table</code> on the table element. It includes borders and rounded corners by default. Add <code class="code">.table-wrapper</code> only when you need horizontal scroll.</p>
 
   <div class="subsection">
     <p class="demo-label">Default table</p>
     <div class="demo-card">
       <div class="demo-preview">
-        <div class="table-wrapper">
-          <table class="table-base">
-            <thead class="table-head">
-              <tr>
-                <th scope="col" class="table-th">Name</th>
-                <th scope="col" class="table-th">Email</th>
-                <th scope="col" class="table-th">Role</th>
-                <th scope="col" class="table-th">Status</th>
-              </tr>
-            </thead>
-            <tbody class="table-body">
-              <tr>
-                <th class="table-th-row">Alice Johnson</th>
-                <td class="table-td">alice@example.com</td>
-                <td class="table-td">Admin</td>
-                <td class="table-td"><span class="badge-success"><span class="badge-dot bg-green-500"></span> Active</span></td>
-              </tr>
-              <tr>
-                <th class="table-th-row">Bob Smith</th>
-                <td class="table-td">bob@example.com</td>
-                <td class="table-td">Editor</td>
-                <td class="table-td"><span class="badge-success"><span class="badge-dot bg-green-500"></span> Active</span></td>
-              </tr>
-              <tr>
-                <th class="table-th-row">Carol Davis</th>
-                <td class="table-td">carol@example.com</td>
-                <td class="table-td">Viewer</td>
-                <td class="table-td"><span class="badge-gray"><span class="badge-dot bg-gray-400"></span> Inactive</span></td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
+        <table class="table">
+          <thead>
+            <tr>
+              <th scope="col">Name</th>
+              <th scope="col">Email</th>
+              <th scope="col">Role</th>
+              <th scope="col">Status</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th>Alice Johnson</th>
+              <td>alice@example.com</td>
+              <td>Admin</td>
+              <td><span class="badge badge-success"><span class="badge-dot bg-green-500"></span> Active</span></td>
+            </tr>
+            <tr>
+              <th>Bob Smith</th>
+              <td>bob@example.com</td>
+              <td>Editor</td>
+              <td><span class="badge badge-success"><span class="badge-dot bg-green-500"></span> Active</span></td>
+            </tr>
+            <tr>
+              <th>Carol Davis</th>
+              <td>carol@example.com</td>
+              <td>Viewer</td>
+              <td><span class="badge badge-gray"><span class="badge-dot bg-gray-400"></span> Inactive</span></td>
+            </tr>
+          </tbody>
+        </table>
       </div>
-      <pre class="code-block"><code>&lt;div class="table-wrapper"&gt;
-  &lt;table class="table-base"&gt;
-    &lt;thead class="table-head"&gt;
-      &lt;tr&gt;
-        &lt;th scope="col" class="table-th"&gt;Name&lt;/th&gt;
-        &lt;th scope="col" class="table-th"&gt;Email&lt;/th&gt;
-      &lt;/tr&gt;
-    &lt;/thead&gt;
-    &lt;tbody class="table-body"&gt;
-      &lt;tr&gt;
-        &lt;th class="table-th-row"&gt;Alice Johnson&lt;/th&gt;
-        &lt;td class="table-td"&gt;alice@example.com&lt;/td&gt;
-      &lt;/tr&gt;
-    &lt;/tbody&gt;
-  &lt;/table&gt;
-&lt;/div&gt;</code></pre>
+      <pre class="code-block"><code>&lt;table class="table"&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th scope="col"&gt;Name&lt;/th&gt;
+      &lt;th scope="col"&gt;Email&lt;/th&gt;
+      &lt;th scope="col"&gt;Role&lt;/th&gt;
+      &lt;th scope="col"&gt;Status&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;th&gt;Alice Johnson&lt;/th&gt;
+      &lt;td&gt;alice@example.com&lt;/td&gt;
+      &lt;td&gt;Admin&lt;/td&gt;
+      &lt;td&gt;&lt;span class="badge badge-success"&gt;&lt;span class="badge-dot bg-green-500"&gt;&lt;/span&gt; Active&lt;/span&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;</code></pre>
     </div>
 
-    <p class="demo-label mt-6">Striped + Hoverable — add .table-striped and .table-hover to each &lt;tr&gt;</p>
+    <p class="demo-label mt-6">Striped + Hoverable — add .table-striped and .table-hover to the table</p>
     <div class="demo-card">
       <div class="demo-preview">
         <div class="table-wrapper">
-          <table class="table-base">
-            <thead class="table-head">
+          <table class="table table-striped table-hover">
+            <thead>
               <tr>
-                <th scope="col" class="table-th">Invoice</th>
-                <th scope="col" class="table-th">Date</th>
-                <th scope="col" class="table-th">Amount</th>
-                <th scope="col" class="table-th">Status</th>
+                <th scope="col">Invoice</th>
+                <th scope="col">Date</th>
+                <th scope="col">Amount</th>
+                <th scope="col">Status</th>
               </tr>
             </thead>
-            <tbody class="table-body">
-              <tr class="table-striped table-hover">
-                <th class="table-th-row">#1001</th>
-                <td class="table-td">Jan 15, 2026</td>
-                <td class="table-td">$1,200.00</td>
-                <td class="table-td"><span class="badge-success badge-square">Paid</span></td>
+            <tbody>
+              <tr>
+                <th>#1001</th>
+                <td>Jan 15, 2026</td>
+                <td>$1,200.00</td>
+                <td><span class="badge badge-success badge-square">Paid</span></td>
               </tr>
-              <tr class="table-striped table-hover">
-                <th class="table-th-row">#1002</th>
-                <td class="table-td">Jan 22, 2026</td>
-                <td class="table-td">$850.00</td>
-                <td class="table-td"><span class="badge-warning badge-square">Pending</span></td>
+              <tr>
+                <th>#1002</th>
+                <td>Jan 22, 2026</td>
+                <td>$850.00</td>
+                <td><span class="badge badge-warning badge-square">Pending</span></td>
               </tr>
-              <tr class="table-striped table-hover">
-                <th class="table-th-row">#1003</th>
-                <td class="table-td">Feb 01, 2026</td>
-                <td class="table-td">$2,340.00</td>
-                <td class="table-td"><span class="badge-success badge-square">Paid</span></td>
+              <tr>
+                <th>#1003</th>
+                <td>Feb 01, 2026</td>
+                <td>$2,340.00</td>
+                <td><span class="badge badge-success badge-square">Paid</span></td>
               </tr>
-              <tr class="table-striped table-hover">
-                <th class="table-th-row">#1004</th>
-                <td class="table-td">Feb 03, 2026</td>
-                <td class="table-td">$475.00</td>
-                <td class="table-td"><span class="badge-danger badge-square">Overdue</span></td>
+              <tr>
+                <th>#1004</th>
+                <td>Feb 03, 2026</td>
+                <td>$475.00</td>
+                <td><span class="badge badge-danger badge-square">Overdue</span></td>
               </tr>
             </tbody>
           </table>
         </div>
       </div>
-      <pre class="code-block"><code>&lt;tr class="table-striped table-hover"&gt;
-  &lt;th class="table-th-row"&gt;#1001&lt;/th&gt;
-  &lt;td class="table-td"&gt;Jan 15, 2026&lt;/td&gt;
-  &lt;td class="table-td"&gt;$1,200.00&lt;/td&gt;
-  &lt;td class="table-td"&gt;&lt;span class="badge-success badge-square"&gt;Paid&lt;/span&gt;&lt;/td&gt;
-&lt;/tr&gt;</code></pre>
+      <pre class="code-block"><code>&lt;table class="table table-striped table-hover"&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;th&gt;#1001&lt;/th&gt;
+      &lt;td&gt;Jan 15, 2026&lt;/td&gt;
+      &lt;td&gt;$1,200.00&lt;/td&gt;
+      &lt;td&gt;&lt;span class="badge badge-success badge-square"&gt;Paid&lt;/span&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;</code></pre>
     </div>
   </div>
 </div>

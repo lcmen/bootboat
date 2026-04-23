@@ -5,98 +5,157 @@ title: Forms
 
 <div class="section">
   <h1 class="section-title">Forms</h1>
-  <p class="section-lead">Inputs, selects, checkboxes, labels, help/error text, toggles, and layout helpers.</p>
+  <p class="section-lead">
+    Inputs, selects, checkboxes, labels, help/error text, toggles, and layout
+    helpers. Shared shells are exposed as
+    <code class="code">.form-control</code> and
+    <code class="code">.form-choice</code>.
+  </p>
 
   <div class="subsection">
-    <p class="demo-label">Text inputs — .form-input, .form-input-error</p>
+    <p class="demo-label">
+      Text inputs — .form-control + .form-input, .form-input .form-input-error
+    </p>
     <div class="demo-card">
       <div class="demo-preview">
         <div class="max-w-md space-y-4">
           <div>
             <label class="form-label">Default input</label>
-            <input type="email" placeholder="you@example.com" class="form-input" />
+            <input
+              type="email"
+              placeholder="you@example.com"
+              class="form-control form-input"
+            />
           </div>
           <div>
-            <label class="form-label-required">Required field</label>
-            <input type="text" placeholder="This field is required" class="form-input" />
+            <label class="form-label form-label-required">Required field</label>
+            <input
+              type="text"
+              placeholder="This field is required"
+              class="form-control form-input"
+            />
             <p class="form-help">This is a help message.</p>
           </div>
           <div>
-            <label class="form-label-required">With validation error</label>
-            <input type="email" value="not-an-email" class="form-input-error" />
+            <label class="form-label form-label-required"
+              >With validation error</label
+            >
+            <input
+              type="email"
+              value="not-an-email"
+              class="form-control form-input form-input-error"
+            />
             <p class="form-error">Please enter a valid email address.</p>
           </div>
           <div>
             <label class="form-label">Disabled</label>
-            <input type="text" value="Read only" disabled class="form-input" />
+            <input
+              type="text"
+              value="Read only"
+              disabled
+              class="form-control form-input"
+            />
           </div>
         </div>
       </div>
-      <pre class="code-block"><code>&lt;label class="form-label"&gt;Label&lt;/label&gt;
-&lt;input type="text" class="form-input" /&gt;
+      <pre
+        class="code-block"
+      ><code>&lt;label class="form-label"&gt;Label&lt;/label&gt;
+&lt;input type="text" class="form-control form-input" /&gt;
 
-&lt;label class="form-label-required"&gt;Required&lt;/label&gt;
-&lt;input type="text" class="form-input" /&gt;
+&lt;label class="form-label form-label-required"&gt;Required&lt;/label&gt;
+&lt;input type="text" class="form-control form-input" /&gt;
 &lt;p class="form-help"&gt;Help text.&lt;/p&gt;
 
-&lt;input type="email" class="form-input-error" /&gt;
+&lt;input type="email" class="form-control form-input form-input-error" /&gt;
 &lt;p class="form-error"&gt;Error message.&lt;/p&gt;
 
-&lt;input type="text" disabled class="form-input" /&gt;</code></pre>
+&lt;input type="text" disabled class="form-control form-input" /&gt;</code></pre>
     </div>
 
-    <p class="demo-label mt-6">Select — .form-select</p>
+    <p class="demo-label mt-6">Select — .form-control + .form-select</p>
     <div class="demo-card">
       <div class="demo-preview">
         <div class="max-w-xs">
           <label class="form-label">Frequency</label>
-          <select class="form-select">
+          <select class="form-control form-select">
             <option>Monthly</option>
             <option>Yearly</option>
           </select>
         </div>
       </div>
-      <pre class="code-block"><code>&lt;select class="form-select"&gt;
+      <pre
+        class="code-block"
+      ><code>&lt;select class="form-control form-select"&gt;
   &lt;option&gt;Monthly&lt;/option&gt;
   &lt;option&gt;Yearly&lt;/option&gt;
 &lt;/select&gt;</code></pre>
     </div>
 
-    <p class="demo-label mt-6">Textarea — .form-textarea, .form-textarea-error</p>
+    <p class="demo-label mt-6">
+      Textarea — .form-control + .form-textarea, .form-textarea
+      .form-textarea-error
+    </p>
     <div class="demo-card">
       <div class="demo-preview">
         <div class="max-w-md">
           <label class="form-label">Message</label>
-          <textarea rows="3" placeholder="Leave a message" class="form-textarea"></textarea>
+          <textarea
+            rows="3"
+            placeholder="Leave a message"
+            class="form-control form-textarea"
+          ></textarea>
         </div>
       </div>
-      <pre class="code-block"><code>&lt;textarea rows="3" class="form-textarea"&gt;&lt;/textarea&gt;</code></pre>
+      <pre
+        class="code-block"
+      ><code>&lt;textarea rows="3" class="form-control form-textarea"&gt;&lt;/textarea&gt;</code></pre>
     </div>
 
-    <p class="demo-label mt-6">Checkbox &amp; Radio — .form-checkbox, .form-radio</p>
+    <p class="demo-label mt-6">
+      Checkbox &amp; Radio — .form-choice + .form-checkbox / .form-radio
+    </p>
     <div class="demo-card">
       <div class="demo-preview space-y-3">
         <div class="flex items-center gap-2">
-          <input type="checkbox" checked class="form-checkbox" id="ck1" />
-          <label for="ck1" class="text-sm text-gray-700">I agree to the terms</label>
+          <input
+            type="checkbox"
+            checked
+            class="form-choice form-checkbox"
+            id="ck1"
+          />
+          <label for="ck1" class="text-sm text-gray-700"
+            >I agree to the terms</label
+          >
         </div>
         <div class="flex items-center gap-4">
           <div class="flex items-center gap-2">
-            <input type="radio" name="plan" checked class="form-radio" id="r1" />
+            <input
+              type="radio"
+              name="plan"
+              checked
+              class="form-choice form-radio"
+              id="r1"
+            />
             <label for="r1" class="text-sm text-gray-700">Monthly</label>
           </div>
           <div class="flex items-center gap-2">
-            <input type="radio" name="plan" class="form-radio" id="r2" />
+            <input
+              type="radio"
+              name="plan"
+              class="form-choice form-radio"
+              id="r2"
+            />
             <label for="r2" class="text-sm text-gray-700">Yearly</label>
           </div>
         </div>
       </div>
       <pre class="code-block"><code>&lt;div class="flex items-center gap-2"&gt;
-  &lt;input type="checkbox" class="form-checkbox" id="ck1" /&gt;
+  &lt;input type="checkbox" class="form-choice form-checkbox" id="ck1" /&gt;
   &lt;label for="ck1"&gt;I agree&lt;/label&gt;
 &lt;/div&gt;
 
-&lt;input type="radio" name="plan" class="form-radio" id="r1" /&gt;
+&lt;input type="radio" name="plan" class="form-choice form-radio" id="r1" /&gt;
 &lt;label for="r1"&gt;Monthly&lt;/label&gt;</code></pre>
     </div>
 
@@ -110,13 +169,17 @@ title: Forms
           </div>
           <label class="form-file-dropzone demo-file-dropzone">
             <div class="text-center">
-              <p class="text-sm font-medium text-secondary-700">Drop files here</p>
+              <p class="text-sm font-medium text-secondary-700">
+                Drop files here
+              </p>
               <p class="text-xs text-secondary-400">or click to browse</p>
             </div>
           </label>
         </div>
       </div>
-      <pre class="code-block"><code>&lt;input type="file" class="form-file" /&gt;
+      <pre
+        class="code-block"
+      ><code>&lt;input type="file" class="form-file" /&gt;
 
 &lt;label class="form-file-dropzone"&gt;
   &lt;div class="text-center"&gt;
@@ -125,12 +188,14 @@ title: Forms
 &lt;/label&gt;</code></pre>
     </div>
 
-    <p class="demo-label mt-6">Toggle switch — .form-toggle + .form-toggle-track</p>
+    <p class="demo-label mt-6">
+      Toggle switch — .form-toggle + .form-toggle-track
+    </p>
     <div class="demo-card">
       <div class="demo-preview space-y-3">
         <label class="form-toggle">
           <input type="checkbox" checked class="peer sr-only" />
-          <div class="form-toggle-track-sm"></div>
+          <div class="form-toggle-track form-toggle-track-sm"></div>
           <span class="ml-3 text-sm text-gray-700">Small</span>
         </label>
         <label class="form-toggle">
@@ -141,19 +206,39 @@ title: Forms
         <label class="form-toggle">
           <input type="checkbox" class="peer sr-only" />
           <div class="form-toggle-track"></div>
-          <span class="ml-3 text-sm text-gray-700">Default (disabled)</span>
+          <span class="ml-3 text-sm text-gray-700">Default (off)</span>
         </label>
         <label class="form-toggle">
           <input type="checkbox" checked class="peer sr-only" />
-          <div class="form-toggle-track-lg"></div>
+          <div class="form-toggle-track form-toggle-track-lg"></div>
           <span class="ml-3 text-sm text-gray-700">Large</span>
         </label>
       </div>
-    <pre class="code-block"><code>&lt;!-- Sizes: form-toggle-track-sm / form-toggle-track / form-toggle-track-lg --&gt;
+      <pre
+        class="code-block"
+      ><code>&lt;!-- Sizes: form-toggle-track form-toggle-track-sm / form-toggle-track / form-toggle-track form-toggle-track-lg --&gt;
+&lt;label class="form-toggle"&gt;
+  &lt;input type="checkbox" checked class="peer sr-only" /&gt;
+  &lt;div class="form-toggle-track form-toggle-track-sm"&gt;&lt;/div&gt;
+  &lt;span class="ml-3 text-sm"&gt;Small&lt;/span&gt;
+&lt;/label&gt;
+
 &lt;label class="form-toggle"&gt;
   &lt;input type="checkbox" checked class="peer sr-only" /&gt;
   &lt;div class="form-toggle-track"&gt;&lt;/div&gt;
-  &lt;span class="ml-3 text-sm"&gt;Enabled&lt;/span&gt;
+  &lt;span class="ml-3 text-sm"&gt;Default (on)&lt;/span&gt;
+&lt;/label&gt;
+
+&lt;label class="form-toggle"&gt;
+  &lt;input type="checkbox" class="peer sr-only" /&gt;
+  &lt;div class="form-toggle-track"&gt;&lt;/div&gt;
+  &lt;span class="ml-3 text-sm"&gt;Default (off)&lt;/span&gt;
+&lt;/label&gt;
+
+&lt;label class="form-toggle"&gt;
+  &lt;input type="checkbox" checked class="peer sr-only" /&gt;
+  &lt;div class="form-toggle-track form-toggle-track-lg"&gt;&lt;/div&gt;
+  &lt;span class="ml-3 text-sm"&gt;Large&lt;/span&gt;
 &lt;/label&gt;</code></pre>
     </div>
 
@@ -162,14 +247,18 @@ title: Forms
       <div class="demo-preview">
         <div class="max-w-md">
           <div class="form-inline">
-            <input type="email" placeholder="Search customers" class="form-input has-addon-right" />
-            <button class="btn btn-primary rounded-l-none">Search</button>
+            <input
+              type="email"
+              placeholder="Search customers"
+              class="form-control form-input has-addon-right"
+            />
+            <button class="btn-danger form-addon-right">Search</button>
           </div>
         </div>
       </div>
       <pre class="code-block"><code>&lt;div class="form-inline"&gt;
-  &lt;input class="form-input has-addon-right" /&gt;
-  &lt;button class="btn btn-primary rounded-l-none"&gt;Search&lt;/button&gt;
+  &lt;input class="form-control form-input has-addon-right" /&gt;
+  &lt;button class="btn-danger form-addon-right"&gt;Search&lt;/button&gt;
 &lt;/div&gt;</code></pre>
     </div>
 
@@ -179,66 +268,44 @@ title: Forms
         <div class="max-w-sm space-y-3">
           <div class="form-addon">
             <span class="form-addon-left">https://</span>
-            <input type="text" placeholder="yoursite.com" class="form-input has-addon-left" />
+            <input
+              type="text"
+              placeholder="yoursite.com"
+              class="form-control form-input has-addon-left"
+            />
           </div>
           <div class="form-addon">
-            <input type="text" placeholder="username" class="form-input has-addon-right" />
+            <input
+              type="text"
+              placeholder="username"
+              class="form-control form-input has-addon-right"
+            />
             <span class="form-addon-right">@example.com</span>
           </div>
           <div class="form-addon">
             <span class="form-addon-left form-addon-disabled">USD</span>
-            <input type="text" placeholder="0.00" class="form-input has-addon-left" disabled />
+            <input
+              type="text"
+              placeholder="0.00"
+              class="form-control form-input has-addon-left"
+              disabled
+            />
           </div>
         </div>
       </div>
       <pre class="code-block"><code>&lt;div class="form-addon"&gt;
   &lt;span class="form-addon-left"&gt;https://&lt;/span&gt;
-  &lt;input type="text" class="form-input has-addon-left" /&gt;
+  &lt;input type="text" class="form-control form-input has-addon-left" /&gt;
 &lt;/div&gt;
 
 &lt;div class="form-addon"&gt;
-  &lt;input type="text" class="form-input has-addon-right" /&gt;
+  &lt;input type="text" class="form-control form-input has-addon-right" /&gt;
   &lt;span class="form-addon-right"&gt;@example.com&lt;/span&gt;
 &lt;/div&gt;
 
 &lt;div class="form-addon"&gt;
   &lt;span class="form-addon-left form-addon-disabled"&gt;USD&lt;/span&gt;
-  &lt;input type="text" class="form-input has-addon-left" disabled /&gt;
-&lt;/div&gt;</code></pre>
-    </div>
-
-    <p class="demo-label mt-6">Utilities — .form-group (space-y-4), .form-row (2-col grid)</p>
-    <div class="demo-card">
-      <div class="demo-preview">
-        <div class="max-w-md">
-          <div class="form-group">
-            <div class="form-row">
-              <div>
-                <label class="form-label">Amount</label>
-                <input type="number" placeholder="0.00" class="form-input" />
-              </div>
-              <div>
-                <label class="form-label">Frequency</label>
-                <select class="form-select">
-                  <option>Monthly</option>
-                  <option>Yearly</option>
-                </select>
-              </div>
-            </div>
-            <div>
-              <label class="form-label">Notes</label>
-              <textarea rows="2" class="form-textarea"></textarea>
-            </div>
-            <button class="btn btn-primary btn-full">Submit</button>
-          </div>
-        </div>
-      </div>
-      <pre class="code-block"><code>&lt;div class="form-group"&gt;
-  &lt;div class="form-row"&gt;
-    &lt;div&gt;...&lt;/div&gt;
-    &lt;div&gt;...&lt;/div&gt;
-  &lt;/div&gt;
-  &lt;div&gt;...&lt;/div&gt;
+  &lt;input type="text" class="form-control form-input has-addon-left" disabled /&gt;
 &lt;/div&gt;</code></pre>
     </div>
   </div>
