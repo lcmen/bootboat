@@ -64,69 +64,185 @@ label[for],
 }
 
 /* ─────────────────────────────────────────────────────────────
- * 1. TYPOGRAPHY — headings, paragraphs, links
+ * 1. ACCORDION
  * ───────────────────────────────────────────────────────────── */
 
-@utility h1 {
+@utility accordion {
   :where(&) {
-    @apply text-5xl font-bold leading-tight;
+    @apply divide-y divide-gray-100;
   }
 }
-@utility h2 {
+@utility accordion-bordered {
   :where(&) {
-    @apply text-2xl font-bold;
+    @apply rounded-lg border-light bg-white shadow-sm;
+  }
+  & .accordion-trigger {
+    @apply px-4;
+  }
+  & .accordion-panel {
+    @apply border-t border-gray-100 p-4;
+  }
+  & .accordion-item[open] .accordion-trigger {
+    @apply bg-gray-50;
   }
 }
-@utility h3 {
-  :where(&) {
-    @apply text-xl font-medium;
+@utility accordion-item {
+  & > summary::-webkit-details-marker {
+    display: none;
+  }
+  & > summary {
+    list-style: none;
+  }
+  &[open] .accordion-icon {
+    @apply rotate-180;
   }
 }
-@utility h4 {
+@utility accordion-trigger {
   :where(&) {
-    @apply text-lg font-medium;
+    @apply flex w-full cursor-pointer list-none items-center justify-between gap-3 py-4 text-left text-lg font-medium text-secondary-900;
   }
 }
-@utility h5 {
+@utility accordion-panel {
   :where(&) {
-    @apply text-base font-medium;
+    @apply pb-4 text-secondary-500;
   }
 }
-@utility h6 {
+@utility accordion-icon {
   :where(&) {
-    @apply text-sm font-semibold;
-  }
-}
-
-@utility link {
-  :where(&) {
-    @apply font-medium text-primary-500 transition-colors;
-  }
-  @variant hover {
-    @apply text-primary-700;
-  }
-}
-@utility link-sm {
-  :where(&) {
-    @apply text-sm;
-  }
-}
-@utility link-xs {
-  :where(&) {
-    @apply text-xs;
-  }
-}
-@utility link-danger {
-  :where(&) {
-    @apply text-red-500;
-  }
-  @variant hover {
-    @apply text-red-700;
+    @apply h-5 w-5 shrink-0 text-secondary-500 transition-all duration-300;
   }
 }
 
 /* ─────────────────────────────────────────────────────────────
- * 2. BUTTONS
+ * 2. ALERT / FLASH MESSAGE
+ * ───────────────────────────────────────────────────────────── */
+
+@utility alert {
+  :where(&) {
+    @apply flex rounded-md p-4 text-sm;
+  }
+}
+@utility alert-info {
+  :where(&) {
+    @apply bg-primary-50 text-primary-500;
+  }
+}
+@utility alert-success {
+  :where(&) {
+    @apply bg-green-50 text-green-500;
+  }
+}
+@utility alert-warning {
+  :where(&) {
+    @apply bg-yellow-50 text-yellow-600;
+  }
+}
+@utility alert-danger {
+  :where(&) {
+    @apply bg-red-50 text-red-500;
+  }
+}
+@utility alert-icon {
+  :where(&) {
+    @apply mr-3 h-5 w-5 shrink-0;
+  }
+}
+
+/* ─────────────────────────────────────────────────────────────
+ * 3. BADGE
+ * ───────────────────────────────────────────────────────────── */
+
+@utility badge {
+  :where(&) {
+    @apply inline-flex items-center gap-1 rounded-full px-2 py-1 text-xs font-semibold;
+  }
+}
+@utility badge-primary {
+  :where(&) {
+    @apply bg-primary-50 text-primary-600;
+  }
+}
+@utility badge-success {
+  :where(&) {
+    @apply bg-green-50 text-green-600;
+  }
+}
+@utility badge-warning {
+  :where(&) {
+    @apply bg-yellow-50 text-yellow-600;
+  }
+}
+@utility badge-danger {
+  :where(&) {
+    @apply bg-red-50 text-red-600;
+  }
+}
+@utility badge-info {
+  :where(&) {
+    @apply bg-sky-50 text-sky-600;
+  }
+}
+@utility badge-gray {
+  :where(&) {
+    @apply bg-gray-100 text-gray-600;
+  }
+}
+@utility badge-dark {
+  :where(&) {
+    @apply bg-secondary-800 text-white;
+  }
+}
+@utility badge-square {
+  :where(&) {
+    @apply rounded-md;
+  }
+}
+@utility badge-lg {
+  :where(&) {
+    @apply px-3 py-1 text-sm;
+  }
+}
+@utility badge-dot {
+  :where(&) {
+    @apply inline-block h-1.5 w-1.5 rounded-full;
+  }
+}
+
+/* ─────────────────────────────────────────────────────────────
+ * 4. BREADCRUMB
+ * ───────────────────────────────────────────────────────────── */
+
+@utility breadcrumb {
+  :where(&) {
+    @apply inline-flex items-center space-x-4 py-2 text-sm font-medium;
+  }
+}
+@utility breadcrumb-bg {
+  :where(&) {
+    @apply rounded-lg bg-secondary-50 px-4;
+  }
+}
+@utility breadcrumb-item {
+  :where(&) {
+    @apply inline-flex items-center text-secondary-500 transition-colors;
+  }
+  @variant hover {
+    @apply text-secondary-600;
+  }
+}
+@utility breadcrumb-separator {
+  :where(&) {
+    @apply inline-flex items-center space-x-4 text-secondary-400;
+  }
+}
+@utility breadcrumb-current {
+  :where(&) {
+    @apply inline-flex items-center text-secondary-700;
+  }
+}
+
+/* ─────────────────────────────────────────────────────────────
+ * 5. BUTTONS
  * ───────────────────────────────────────────────────────────── */
 
 @utility btn {
@@ -299,7 +415,7 @@ label[for],
 }
 
 /* ─────────────────────────────────────────────────────────────
- * 3. BUTTON GROUP
+ * 6. BUTTON GROUP
  * ───────────────────────────────────────────────────────────── */
 
 @utility btn-group {
@@ -330,7 +446,129 @@ label[for],
 }
 
 /* ─────────────────────────────────────────────────────────────
- * 4. FORMS — inputs, selects, labels, validation
+ * 7. CARD
+ * ───────────────────────────────────────────────────────────── */
+
+@utility card {
+  :where(&) {
+    @apply overflow-hidden rounded-lg bg-white shadow;
+  }
+}
+@utility card-body {
+  :where(&) {
+    @apply relative p-6;
+  }
+}
+@utility card-sm {
+  :where(&) {
+    @apply mx-auto w-full max-w-sm;
+  }
+}
+@utility card-md {
+  :where(&) {
+    @apply mx-auto w-full max-w-md;
+  }
+}
+@utility card-lg {
+  :where(&) {
+    @apply mx-auto w-full max-w-lg;
+  }
+}
+
+/* ─────────────────────────────────────────────────────────────
+ * 8. DIVIDER
+ * ───────────────────────────────────────────────────────────── */
+
+@utility divider {
+  :where(&) {
+    @apply my-5 flex items-center gap-4;
+  }
+  &::before,
+  &::after {
+    content: "";
+    @apply h-px flex-1 bg-gray-300;
+  }
+}
+@utility divider-text {
+  :where(&) {
+    @apply text-xs text-secondary-400;
+  }
+}
+@utility divider-line {
+  :where(&) {
+    @apply my-4 border-t border-gray-200;
+  }
+}
+
+/* ─────────────────────────────────────────────────────────────
+ * 9. DROPDOWN
+ * ───────────────────────────────────────────────────────────── */
+
+@utility dropdown {
+  :where(&) {
+    @apply relative inline-block;
+  }
+}
+@utility dropdown-trigger {
+  :where(&) {
+    @apply inline-flex items-center gap-2 rounded-lg border-secondary bg-white px-3 py-2 text-center text-sm font-medium text-gray-700 shadow-sm transition-all;
+  }
+  @variant hover {
+    @apply bg-gray-100;
+  }
+  @variant focus {
+    @apply ring ring-gray-100;
+  }
+  @variant disabled {
+    @apply cursor-not-allowed border-gray-100 bg-gray-50 text-gray-400;
+  }
+}
+@utility dropdown-panel {
+  :where(&) {
+    @apply absolute z-10 mt-2 w-48 divide-y divide-gray-100 rounded-lg border-light bg-white text-left text-sm shadow-lg;
+  }
+}
+@utility dropdown-panel-right {
+  :where(&) {
+    @apply right-0;
+  }
+}
+@utility dropdown-panel-left {
+  :where(&) {
+    @apply left-0;
+  }
+}
+@utility dropdown-panel-wide {
+  :where(&) {
+    @apply w-56;
+  }
+}
+@utility dropdown-section {
+  :where(&) {
+    @apply p-1;
+  }
+}
+@utility dropdown-item {
+  :where(&) {
+    @apply flex w-full items-center rounded-md px-3 py-2 text-gray-700 transition-colors;
+  }
+  @variant hover {
+    @apply bg-gray-100;
+  }
+}
+@utility dropdown-item-danger {
+  :where(&) {
+    @apply text-red-600;
+  }
+}
+@utility dropdown-item-icon {
+  :where(&) {
+    @apply mr-2.5 h-4 w-4 text-secondary-400;
+  }
+}
+
+/* ─────────────────────────────────────────────────────────────
+ * 10. FORMS — inputs, selects, labels, validation
  * ───────────────────────────────────────────────────────────── */
 
 @utility form-label {
@@ -515,184 +753,72 @@ label[for],
 }
 
 /* ─────────────────────────────────────────────────────────────
- * 5. CARD
+ * 11. LIST
  * ───────────────────────────────────────────────────────────── */
 
-@utility card {
+@utility list-icon {
   :where(&) {
-    @apply overflow-hidden rounded-lg bg-white shadow;
+    @apply space-y-3;
   }
 }
-@utility card-body {
+@utility list-icon-item {
   :where(&) {
-    @apply relative p-6;
+    @apply flex gap-3;
   }
 }
-@utility card-sm {
+@utility list-icon-marker {
   :where(&) {
-    @apply mx-auto w-full max-w-sm;
+    @apply h-5 w-5 shrink-0 text-primary-500;
   }
 }
-@utility card-md {
+@utility list-bordered {
   :where(&) {
-    @apply mx-auto w-full max-w-md;
+    @apply divide-y divide-gray-200 rounded-xl border-muted shadow-sm;
   }
 }
-@utility card-lg {
+@utility list-bordered-item {
   :where(&) {
-    @apply mx-auto w-full max-w-lg;
+    @apply p-4;
   }
 }
 
 /* ─────────────────────────────────────────────────────────────
- * 6. ACCORDION
+ * 12. MEDIA OBJECT
  * ───────────────────────────────────────────────────────────── */
 
-@utility accordion {
+@utility media {
   :where(&) {
-    @apply divide-y divide-gray-100;
+    @apply flex gap-4;
   }
 }
-@utility accordion-bordered {
+@utility media-center {
   :where(&) {
-    @apply rounded-lg border-light bg-white shadow-sm;
-  }
-  & .accordion-trigger {
-    @apply px-4;
-  }
-  & .accordion-panel {
-    @apply border-t border-gray-100 p-4;
-  }
-  & .accordion-item[open] .accordion-trigger {
-    @apply bg-gray-50;
+    @apply items-center;
   }
 }
-@utility accordion-item {
-  & > summary::-webkit-details-marker {
-    display: none;
-  }
-  & > summary {
-    list-style: none;
-  }
-  &[open] .accordion-icon {
-    @apply rotate-180;
+@utility media-bottom {
+  :where(&) {
+    @apply items-end;
   }
 }
-@utility accordion-trigger {
+@utility media-img {
   :where(&) {
-    @apply flex w-full cursor-pointer list-none items-center justify-between gap-3 py-4 text-left text-lg font-medium text-secondary-900;
+    @apply h-12 w-12 shrink-0 rounded object-cover object-center;
   }
 }
-@utility accordion-panel {
+@utility media-img-lg {
   :where(&) {
-    @apply pb-4 text-secondary-500;
+    @apply h-16 w-16;
   }
 }
-@utility accordion-icon {
+@utility media-body {
   :where(&) {
-    @apply h-5 w-5 shrink-0 text-secondary-500 transition-all duration-300;
+    @apply flex-1;
   }
 }
 
 /* ─────────────────────────────────────────────────────────────
- * 7. NAVBAR
- * ───────────────────────────────────────────────────────────── */
-
-@utility navbar {
-  :where(&) {
-    @apply sticky top-0 z-30 border-b border-secondary-200 bg-white;
-  }
-}
-@utility navbar-inner {
-  :where(&) {
-    @apply mx-auto flex-between px-4 py-3;
-  }
-}
-@utility navbar-brand {
-  :where(&) {
-    @apply flex items-center gap-2 text-lg font-bold text-secondary-900;
-  }
-}
-@utility navbar-brand-icon {
-  :where(&) {
-    @apply flex h-8 w-8 items-center justify-center rounded-lg bg-primary-500 text-sm font-extrabold text-white;
-  }
-}
-@utility navbar-actions {
-  :where(&) {
-    @apply flex items-center gap-2;
-  }
-}
-
-/* ─────────────────────────────────────────────────────────────
- * 8. DROPDOWN
- * ───────────────────────────────────────────────────────────── */
-
-@utility dropdown {
-  :where(&) {
-    @apply relative inline-block;
-  }
-}
-@utility dropdown-trigger {
-  :where(&) {
-    @apply inline-flex items-center gap-2 rounded-lg border-secondary bg-white px-3 py-2 text-center text-sm font-medium text-gray-700 shadow-sm transition-all;
-  }
-  @variant hover {
-    @apply bg-gray-100;
-  }
-  @variant focus {
-    @apply ring ring-gray-100;
-  }
-  @variant disabled {
-    @apply cursor-not-allowed border-gray-100 bg-gray-50 text-gray-400;
-  }
-}
-@utility dropdown-panel {
-  :where(&) {
-    @apply absolute z-10 mt-2 w-48 divide-y divide-gray-100 rounded-lg border-light bg-white text-left text-sm shadow-lg;
-  }
-}
-@utility dropdown-panel-right {
-  :where(&) {
-    @apply right-0;
-  }
-}
-@utility dropdown-panel-left {
-  :where(&) {
-    @apply left-0;
-  }
-}
-@utility dropdown-panel-wide {
-  :where(&) {
-    @apply w-56;
-  }
-}
-@utility dropdown-section {
-  :where(&) {
-    @apply p-1;
-  }
-}
-@utility dropdown-item {
-  :where(&) {
-    @apply flex w-full items-center rounded-md px-3 py-2 text-gray-700 transition-colors;
-  }
-  @variant hover {
-    @apply bg-gray-100;
-  }
-}
-@utility dropdown-item-danger {
-  :where(&) {
-    @apply text-red-600;
-  }
-}
-@utility dropdown-item-icon {
-  :where(&) {
-    @apply mr-2.5 h-4 w-4 text-secondary-400;
-  }
-}
-
-/* ─────────────────────────────────────────────────────────────
- * 9. MODAL
+ * 13. MODAL
  * ───────────────────────────────────────────────────────────── */
 
 @utility modal-overlay {
@@ -740,127 +866,75 @@ label[for],
 }
 
 /* ─────────────────────────────────────────────────────────────
- * 10. ALERT / FLASH MESSAGE
+ * 14. NAVBAR
  * ───────────────────────────────────────────────────────────── */
 
-@utility alert {
+@utility navbar {
   :where(&) {
-    @apply flex rounded-md p-4 text-sm;
+    @apply sticky top-0 z-30 border-b border-secondary-200 bg-white;
   }
 }
-@utility alert-info {
+@utility navbar-inner {
   :where(&) {
-    @apply bg-primary-50 text-primary-500;
+    @apply mx-auto flex-between px-4 py-3;
   }
 }
-@utility alert-success {
+@utility navbar-brand {
   :where(&) {
-    @apply bg-green-50 text-green-500;
+    @apply flex items-center gap-2 text-lg font-bold text-secondary-900;
   }
 }
-@utility alert-warning {
+@utility navbar-brand-icon {
   :where(&) {
-    @apply bg-yellow-50 text-yellow-600;
+    @apply flex h-8 w-8 items-center justify-center rounded-lg bg-primary-500 text-sm font-extrabold text-white;
   }
 }
-@utility alert-danger {
+@utility navbar-actions {
   :where(&) {
-    @apply bg-red-50 text-red-500;
-  }
-}
-@utility alert-icon {
-  :where(&) {
-    @apply mr-3 h-5 w-5 shrink-0;
+    @apply flex items-center gap-2;
   }
 }
 
 /* ─────────────────────────────────────────────────────────────
- * 11. BADGE
+ * 15. PAGINATION
  * ───────────────────────────────────────────────────────────── */
 
-@utility badge {
+@utility pagination {
   :where(&) {
-    @apply inline-flex items-center gap-1 rounded-full px-2 py-1 text-xs font-semibold;
+    @apply inline-flex -space-x-px rounded-md shadow-sm;
   }
 }
-@utility badge-primary {
+@utility pagination-item {
   :where(&) {
-    @apply bg-primary-50 text-primary-600;
+    @apply inline-flex items-center border border-gray-300 bg-white px-4 py-2 text-sm font-medium text-gray-500 transition-colors;
+  }
+  @variant hover {
+    @apply bg-gray-50;
   }
 }
-@utility badge-success {
+@utility pagination-item-active {
   :where(&) {
-    @apply bg-green-50 text-green-600;
+    @apply border-primary-500 bg-primary-50 text-primary-600 z-10;
   }
 }
-@utility badge-warning {
+@utility pagination-prev {
   :where(&) {
-    @apply bg-yellow-50 text-yellow-600;
+    @apply rounded-l-md px-2;
   }
 }
-@utility badge-danger {
+@utility pagination-next {
   :where(&) {
-    @apply bg-red-50 text-red-600;
+    @apply rounded-r-md px-2;
   }
 }
-@utility badge-info {
+@utility pagination-icon {
   :where(&) {
-    @apply bg-sky-50 text-sky-600;
-  }
-}
-@utility badge-gray {
-  :where(&) {
-    @apply bg-gray-100 text-gray-600;
-  }
-}
-@utility badge-dark {
-  :where(&) {
-    @apply bg-secondary-800 text-white;
-  }
-}
-@utility badge-square {
-  :where(&) {
-    @apply rounded-md;
-  }
-}
-@utility badge-lg {
-  :where(&) {
-    @apply px-3 py-1 text-sm;
-  }
-}
-@utility badge-dot {
-  :where(&) {
-    @apply inline-block h-1.5 w-1.5 rounded-full;
+    @apply h-5 w-5;
   }
 }
 
 /* ─────────────────────────────────────────────────────────────
- * 12. DIVIDER
- * ───────────────────────────────────────────────────────────── */
-
-@utility divider {
-  :where(&) {
-    @apply my-5 flex items-center gap-4;
-  }
-  &::before,
-  &::after {
-    content: "";
-    @apply h-px flex-1 bg-gray-300;
-  }
-}
-@utility divider-text {
-  :where(&) {
-    @apply text-xs text-secondary-400;
-  }
-}
-@utility divider-line {
-  :where(&) {
-    @apply my-4 border-t border-gray-200;
-  }
-}
-
-/* ─────────────────────────────────────────────────────────────
- * 13. TABLE
+ * 16. TABLE
  * ───────────────────────────────────────────────────────────── */
 
 @utility table-wrapper {
@@ -905,7 +979,7 @@ label[for],
 }
 
 /* ─────────────────────────────────────────────────────────────
- * 14. TABS
+ * 17. TABS
  * ───────────────────────────────────────────────────────────── */
 
 @utility tab-list {
@@ -947,7 +1021,69 @@ label[for],
 }
 
 /* ─────────────────────────────────────────────────────────────
- * 15. BORDERS — semantic border utilities (border + color)
+ * 18. TYPOGRAPHY — headings, paragraphs, links
+ * ───────────────────────────────────────────────────────────── */
+
+@utility h1 {
+  :where(&) {
+    @apply text-5xl font-bold leading-tight;
+  }
+}
+@utility h2 {
+  :where(&) {
+    @apply text-2xl font-bold;
+  }
+}
+@utility h3 {
+  :where(&) {
+    @apply text-xl font-medium;
+  }
+}
+@utility h4 {
+  :where(&) {
+    @apply text-lg font-medium;
+  }
+}
+@utility h5 {
+  :where(&) {
+    @apply text-base font-medium;
+  }
+}
+@utility h6 {
+  :where(&) {
+    @apply text-sm font-semibold;
+  }
+}
+
+@utility link {
+  :where(&) {
+    @apply font-medium text-primary-500 transition-colors;
+  }
+  @variant hover {
+    @apply text-primary-700;
+  }
+}
+@utility link-sm {
+  :where(&) {
+    @apply text-sm;
+  }
+}
+@utility link-xs {
+  :where(&) {
+    @apply text-xs;
+  }
+}
+@utility link-danger {
+  :where(&) {
+    @apply text-red-500;
+  }
+  @variant hover {
+    @apply text-red-700;
+  }
+}
+
+/* ─────────────────────────────────────────────────────────────
+ * 19. UTILITIES — semantic borders and page scaffolding
  * ───────────────────────────────────────────────────────────── */
 
 @utility border-secondary {
@@ -995,146 +1131,6 @@ label[for],
     @apply border border-secondary-800;
   }
 }
-
-/* ─────────────────────────────────────────────────────────────
- * 16. BREADCRUMB
- * ───────────────────────────────────────────────────────────── */
-
-@utility breadcrumb {
-  :where(&) {
-    @apply inline-flex items-center space-x-4 py-2 text-sm font-medium;
-  }
-}
-@utility breadcrumb-bg {
-  :where(&) {
-    @apply rounded-lg bg-secondary-50 px-4;
-  }
-}
-@utility breadcrumb-item {
-  :where(&) {
-    @apply inline-flex items-center text-secondary-500 transition-colors;
-  }
-  @variant hover {
-    @apply text-secondary-600;
-  }
-}
-@utility breadcrumb-separator {
-  :where(&) {
-    @apply inline-flex items-center space-x-4 text-secondary-400;
-  }
-}
-@utility breadcrumb-current {
-  :where(&) {
-    @apply inline-flex items-center text-secondary-700;
-  }
-}
-
-/* ─────────────────────────────────────────────────────────────
- * 17. LIST
- * ───────────────────────────────────────────────────────────── */
-
-@utility list-icon {
-  :where(&) {
-    @apply space-y-3;
-  }
-}
-@utility list-icon-item {
-  :where(&) {
-    @apply flex gap-3;
-  }
-}
-@utility list-icon-marker {
-  :where(&) {
-    @apply h-5 w-5 shrink-0 text-primary-500;
-  }
-}
-@utility list-bordered {
-  :where(&) {
-    @apply divide-y divide-gray-200 rounded-xl border-muted shadow-sm;
-  }
-}
-@utility list-bordered-item {
-  :where(&) {
-    @apply p-4;
-  }
-}
-
-/* ─────────────────────────────────────────────────────────────
- * 18. MEDIA OBJECT
- * ───────────────────────────────────────────────────────────── */
-
-@utility media {
-  :where(&) {
-    @apply flex gap-4;
-  }
-}
-@utility media-center {
-  :where(&) {
-    @apply items-center;
-  }
-}
-@utility media-bottom {
-  :where(&) {
-    @apply items-end;
-  }
-}
-@utility media-img {
-  :where(&) {
-    @apply h-12 w-12 shrink-0 rounded object-cover object-center;
-  }
-}
-@utility media-img-lg {
-  :where(&) {
-    @apply h-16 w-16;
-  }
-}
-@utility media-body {
-  :where(&) {
-    @apply flex-1;
-  }
-}
-
-/* ─────────────────────────────────────────────────────────────
- * 19. PAGINATION
- * ───────────────────────────────────────────────────────────── */
-
-@utility pagination {
-  :where(&) {
-    @apply inline-flex -space-x-px rounded-md shadow-sm;
-  }
-}
-@utility pagination-item {
-  :where(&) {
-    @apply inline-flex items-center border border-gray-300 bg-white px-4 py-2 text-sm font-medium text-gray-500 transition-colors;
-  }
-  @variant hover {
-    @apply bg-gray-50;
-  }
-}
-@utility pagination-item-active {
-  :where(&) {
-    @apply border-primary-500 bg-primary-50 text-primary-600 z-10;
-  }
-}
-@utility pagination-prev {
-  :where(&) {
-    @apply rounded-l-md px-2;
-  }
-}
-@utility pagination-next {
-  :where(&) {
-    @apply rounded-r-md px-2;
-  }
-}
-@utility pagination-icon {
-  :where(&) {
-    @apply h-5 w-5;
-  }
-}
-
-/* ─────────────────────────────────────────────────────────────
- * 20. LAYOUT UTILITIES
- * ───────────────────────────────────────────────────────────── */
 
 @utility flex-between {
   :where(&) {
