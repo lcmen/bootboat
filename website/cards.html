@@ -14,7 +14,7 @@ title: Cards
         <div class="card">
           <div class="card-body">
             <h3 class="h4">Card</h3>
-            <p class="text-lead">No max-width — stretches to its container.</p>
+            <p class="mt-1 text-sm text-secondary-500">No max-width — stretches to its container.</p>
           </div>
         </div>
       </div>
@@ -25,48 +25,154 @@ title: Cards
 &lt;/div&gt;</code></pre>
     </div>
 
-    <p class="demo-label mt-6">.card-sm — max-w-sm (384px)</p>
+    <p class="demo-label mt-6">.card .card-sm — max-w-sm (384px)</p>
     <div class="demo-card">
       <div class="demo-preview">
-        <div class="card-sm">
+        <div class="card card-sm">
           <div class="card-body">
             <h3 class="h4">Small card</h3>
-            <p class="text-lead">Good for narrow widgets and callouts.</p>
+            <p class="mt-1 text-sm text-secondary-500">Good for narrow widgets and callouts.</p>
           </div>
         </div>
       </div>
-      <pre class="code-block"><code>&lt;div class="card-sm"&gt;
+      <pre class="code-block"><code>&lt;div class="card card-sm"&gt;
   &lt;div class="card-body"&gt;Content&lt;/div&gt;
 &lt;/div&gt;</code></pre>
     </div>
 
-    <p class="demo-label mt-6">.card-md — max-w-md (448px)</p>
+    <p class="demo-label mt-6">.card .card-md — max-w-md (448px)</p>
     <div class="demo-card">
       <div class="demo-preview">
-        <div class="card-md">
+        <div class="card card-md">
           <div class="card-body">
             <h3 class="h4">Medium card</h3>
-            <p class="text-lead">Good for auth forms and login dialogs.</p>
+            <p class="mt-1 text-sm text-secondary-500">Good for auth forms and login dialogs.</p>
           </div>
         </div>
       </div>
-      <pre class="code-block"><code>&lt;div class="card-md"&gt;
+      <pre class="code-block"><code>&lt;div class="card card-md"&gt;
   &lt;div class="card-body"&gt;Content&lt;/div&gt;
 &lt;/div&gt;</code></pre>
     </div>
 
-    <p class="demo-label mt-6">.card-lg — max-w-lg (512px)</p>
+    <p class="demo-label mt-6">.card .card-lg — max-w-lg (512px)</p>
     <div class="demo-card">
       <div class="demo-preview">
-        <div class="card-lg">
+        <div class="card card-lg">
           <div class="card-body">
             <h3 class="h4">Large card</h3>
-            <p class="text-lead">Wider forms and content panels.</p>
+            <p class="mt-1 text-sm text-secondary-500">Wider forms and content panels.</p>
           </div>
         </div>
       </div>
-      <pre class="code-block"><code>&lt;div class="card-lg"&gt;
+      <pre class="code-block"><code>&lt;div class="card card-lg"&gt;
   &lt;div class="card-body"&gt;Content&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+    </div>
+
+    <p class="demo-label mt-6">Media card — combine .card with an image and .card-body</p>
+    <div class="demo-card">
+      <div class="demo-preview">
+        <article class="card card-md">
+          <img src="https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=900&q=80" alt="Desk with a laptop and notebook" class="aspect-video w-full object-cover" />
+          <div class="card-body">
+            <div class="mb-2 flex flex-wrap gap-2">
+              <span class="badge badge-primary">Product</span>
+              <span class="badge badge-gray">4 min read</span>
+            </div>
+            <h3 class="h4">Planning a personal dashboard</h3>
+            <p class="mt-1 text-sm text-secondary-500">Use cards for small content blocks, notes, and activity summaries.</p>
+          </div>
+        </article>
+      </div>
+      <pre class="code-block"><code>&lt;article class="card card-md"&gt;
+  &lt;img src="cover.jpg" alt="" class="aspect-video w-full object-cover" /&gt;
+  &lt;div class="card-body"&gt;
+    &lt;span class="badge badge-primary"&gt;Product&lt;/span&gt;
+    &lt;h3 class="h4"&gt;Planning a personal dashboard&lt;/h3&gt;
+    &lt;p class="mt-1 text-sm text-secondary-500"&gt;Use cards for small content blocks.&lt;/p&gt;
+  &lt;/div&gt;
+&lt;/article&gt;</code></pre>
+    </div>
+
+    <p class="demo-label mt-6">Action card — header, body, and footer actions</p>
+    <div class="demo-card">
+      <div class="demo-preview">
+        <section class="card card-md">
+          <div class="border-b border-gray-100 px-6 py-4">
+            <h3 class="h5">Team invite</h3>
+            <p class="mt-1 text-sm text-secondary-400">Invite a collaborator to this workspace.</p>
+          </div>
+          <div class="card-body">
+            <label class="form-label" for="invite-email">Email address</label>
+            <input id="invite-email" type="email" class="form-input" placeholder="teammate@example.com" />
+          </div>
+          <div class="flex justify-end gap-3 bg-secondary-50 px-6 py-3">
+            <button class="btn btn-secondary">Cancel</button>
+            <button class="btn btn-primary">Send invite</button>
+          </div>
+        </section>
+      </div>
+      <pre class="code-block"><code>&lt;section class="card card-md"&gt;
+  &lt;div class="border-b border-gray-100 px-6 py-4"&gt;
+    &lt;h3 class="h5"&gt;Team invite&lt;/h3&gt;
+    &lt;p class="mt-1 text-sm text-secondary-400"&gt;Invite a collaborator.&lt;/p&gt;
+  &lt;/div&gt;
+  &lt;div class="card-body"&gt;
+    &lt;input type="email" class="form-input" /&gt;
+  &lt;/div&gt;
+  &lt;div class="flex justify-end gap-3 bg-secondary-50 px-6 py-3"&gt;
+    &lt;button class="btn btn-secondary"&gt;Cancel&lt;/button&gt;
+    &lt;button class="btn btn-primary"&gt;Send invite&lt;/button&gt;
+  &lt;/div&gt;
+&lt;/section&gt;</code></pre>
+    </div>
+
+    <p class="demo-label mt-6">List card — grouped records or settings</p>
+    <div class="demo-card">
+      <div class="demo-preview">
+        <div class="card card-md">
+          <div class="border-b border-gray-100 px-6 py-4">
+            <h3 class="h5">Recent activity</h3>
+          </div>
+          <ul class="divide-y divide-gray-100">
+            <li class="flex items-start gap-3 px-6 py-4">
+              <span class="mt-1 badge-dot bg-green-500"></span>
+              <div>
+                <p class="text-sm font-medium text-secondary-900">Backup completed</p>
+                <p class="mt-0.5 text-sm text-secondary-400">Database snapshot finished 12 minutes ago.</p>
+              </div>
+            </li>
+            <li class="flex items-start gap-3 px-6 py-4">
+              <span class="mt-1 badge-dot bg-primary-500"></span>
+              <div>
+                <p class="text-sm font-medium text-secondary-900">New signup</p>
+                <p class="mt-0.5 text-sm text-secondary-400">A user joined the private beta.</p>
+              </div>
+            </li>
+            <li class="flex items-start gap-3 px-6 py-4">
+              <span class="mt-1 badge-dot bg-yellow-500"></span>
+              <div>
+                <p class="text-sm font-medium text-secondary-900">Invoice pending</p>
+                <p class="mt-0.5 text-sm text-secondary-400">Payment retry is scheduled for tomorrow.</p>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <pre class="code-block"><code>&lt;div class="card card-md"&gt;
+  &lt;div class="border-b border-gray-100 px-6 py-4"&gt;
+    &lt;h3 class="h5"&gt;Recent activity&lt;/h3&gt;
+  &lt;/div&gt;
+  &lt;ul class="divide-y divide-gray-100"&gt;
+    &lt;li class="flex items-start gap-3 px-6 py-4"&gt;
+      &lt;span class="mt-1 badge-dot bg-green-500"&gt;&lt;/span&gt;
+      &lt;div&gt;
+        &lt;p class="text-sm font-medium text-secondary-900"&gt;Backup completed&lt;/p&gt;
+        &lt;p class="mt-0.5 text-sm text-secondary-400"&gt;Database snapshot finished.&lt;/p&gt;
+      &lt;/div&gt;
+    &lt;/li&gt;
+  &lt;/ul&gt;
 &lt;/div&gt;</code></pre>
     </div>
   </div>

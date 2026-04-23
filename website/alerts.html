@@ -16,19 +16,19 @@ title: Alerts
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="alert-icon text-secondary-400"><path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a.75.75 0 000 1.5h.253a.25.25 0 01.244.304l-.459 2.066A1.75 1.75 0 0010.747 15H11a.75.75 0 000-1.5h-.253a.25.25 0 01-.244-.304l.459-2.066A1.75 1.75 0 009.253 9H9z" clip-rule="evenodd" /></svg>
           <div><b>Base:</b> Use <code class="code">.alert</code> as the wrapper, then add your own colors.</div>
         </div>
-        <div class="alert-info">
+        <div class="alert alert-info">
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="alert-icon"><path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a.75.75 0 000 1.5h.253a.25.25 0 01.244.304l-.459 2.066A1.75 1.75 0 0010.747 15H11a.75.75 0 000-1.5h-.253a.25.25 0 01-.244-.304l.459-2.066A1.75 1.75 0 009.253 9H9z" clip-rule="evenodd" /></svg>
           <div><b>Info:</b> This is an informational message.</div>
         </div>
-        <div class="alert-success">
+        <div class="alert alert-success">
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="alert-icon"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.06l2.5 2.5a.75.75 0 001.137-.089l4-5.5z" clip-rule="evenodd" /></svg>
           <div><b>Success!</b> Your changes have been saved.</div>
         </div>
-        <div class="alert-warning">
+        <div class="alert alert-warning">
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="alert-icon"><path fill-rule="evenodd" d="M8.485 2.495c.673-1.167 2.357-1.167 3.03 0l6.28 10.875c.673 1.167-.17 2.625-1.516 2.625H3.72c-1.347 0-2.189-1.458-1.515-2.625L8.485 2.495zM10 5a.75.75 0 01.75.75v3.5a.75.75 0 01-1.5 0v-3.5A.75.75 0 0110 5zm0 9a1 1 0 100-2 1 1 0 000 2z" clip-rule="evenodd" /></svg>
           <div><b>Warning:</b> Please review before continuing.</div>
         </div>
-        <div class="alert-danger">
+        <div class="alert alert-danger">
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="alert-icon"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.28 7.22a.75.75 0 00-1.06 1.06L8.94 10l-1.72 1.72a.75.75 0 101.06 1.06L10 11.06l1.72 1.72a.75.75 0 101.06-1.06L11.06 10l1.72-1.72a.75.75 0 00-1.06-1.06L10 8.94 8.28 7.22z" clip-rule="evenodd" /></svg>
           <div><b>Error:</b> Something went wrong. Please try again.</div>
         </div>
@@ -40,7 +40,7 @@ title: Alerts
 &lt;/div&gt;
 
 &lt;!-- Variants: alert-info, alert-success, alert-warning, alert-danger --&gt;
-&lt;div class="alert-info"&gt;
+&lt;div class="alert alert-info"&gt;
   &lt;svg class="alert-icon"&gt;...&lt;/svg&gt;
   &lt;div&gt;&lt;b&gt;Info:&lt;/b&gt; Message.&lt;/div&gt;
 &lt;/div&gt;</code></pre>
@@ -54,56 +54,62 @@ title: Alerts
     <div class="demo-card">
       <div class="demo-preview flex flex-wrap gap-2">
         <span class="badge border-muted bg-white text-secondary-700">Base</span>
-        <span class="badge-primary">Primary</span>
-        <span class="badge-success">Success</span>
-        <span class="badge-warning">Warning</span>
-        <span class="badge-danger">Danger</span>
-        <span class="badge-info">Info</span>
-        <span class="badge-gray">Gray</span>
-        <span class="badge-dark">Dark</span>
+        <span class="badge badge-primary">Primary</span>
+        <span class="badge badge-success">Success</span>
+        <span class="badge badge-warning">Warning</span>
+        <span class="badge badge-danger">Danger</span>
+        <span class="badge badge-info">Info</span>
+        <span class="badge badge-gray">Gray</span>
+        <span class="badge badge-dark">Dark</span>
       </div>
       <pre class="code-block"><code>&lt;span class="badge border-muted bg-white text-secondary-700"&gt;Base&lt;/span&gt;
-&lt;span class="badge-primary"&gt;Primary&lt;/span&gt;
-&lt;span class="badge-success"&gt;Success&lt;/span&gt;
-&lt;span class="badge-warning"&gt;Warning&lt;/span&gt;
-&lt;span class="badge-danger"&gt;Danger&lt;/span&gt;
-&lt;span class="badge-info"&gt;Info&lt;/span&gt;
-&lt;span class="badge-gray"&gt;Gray&lt;/span&gt;
-&lt;span class="badge-dark"&gt;Dark&lt;/span&gt;</code></pre>
+&lt;span class="badge badge-primary"&gt;Primary&lt;/span&gt;
+&lt;span class="badge badge-success"&gt;Success&lt;/span&gt;
+&lt;span class="badge badge-warning"&gt;Warning&lt;/span&gt;
+&lt;span class="badge badge-danger"&gt;Danger&lt;/span&gt;
+&lt;span class="badge badge-info"&gt;Info&lt;/span&gt;
+&lt;span class="badge badge-gray"&gt;Gray&lt;/span&gt;
+&lt;span class="badge badge-dark"&gt;Dark&lt;/span&gt;</code></pre>
     </div>
 
     <p class="demo-label mt-6">Squared — add .badge-square</p>
     <div class="demo-card">
       <div class="demo-preview flex flex-wrap gap-2">
-        <span class="badge-primary badge-square">Primary</span>
-        <span class="badge-success badge-square">Success</span>
-        <span class="badge-warning badge-square">Warning</span>
-        <span class="badge-danger badge-square">Danger</span>
-        <span class="badge-info badge-square">Info</span>
-        <span class="badge-gray badge-square">Gray</span>
-        <span class="badge-dark badge-square">Dark</span>
+        <span class="badge badge-primary badge-square">Primary</span>
+        <span class="badge badge-success badge-square">Success</span>
+        <span class="badge badge-warning badge-square">Warning</span>
+        <span class="badge badge-danger badge-square">Danger</span>
+        <span class="badge badge-info badge-square">Info</span>
+        <span class="badge badge-gray badge-square">Gray</span>
+        <span class="badge badge-dark badge-square">Dark</span>
       </div>
-      <pre class="code-block"><code>&lt;span class="badge-success badge-square"&gt;Paid&lt;/span&gt;</code></pre>
+      <pre class="code-block"><code>&lt;span class="badge badge-primary badge-square"&gt;Primary&lt;/span&gt;
+&lt;span class="badge badge-success badge-square"&gt;Success&lt;/span&gt;
+&lt;span class="badge badge-warning badge-square"&gt;Warning&lt;/span&gt;
+&lt;span class="badge badge-danger badge-square"&gt;Danger&lt;/span&gt;
+&lt;span class="badge badge-info badge-square"&gt;Info&lt;/span&gt;
+&lt;span class="badge badge-gray badge-square"&gt;Gray&lt;/span&gt;
+&lt;span class="badge badge-dark badge-square"&gt;Dark&lt;/span&gt;</code></pre>
     </div>
 
     <p class="demo-label mt-6">Large — add .badge-lg</p>
     <div class="demo-card">
       <div class="demo-preview flex flex-wrap gap-2 items-center">
-        <span class="badge-primary badge-lg">Large pill</span>
-        <span class="badge-success badge-lg badge-square">Large squared</span>
+        <span class="badge badge-primary badge-lg">Large pill</span>
+        <span class="badge badge-success badge-lg badge-square">Large squared</span>
       </div>
-      <pre class="code-block"><code>&lt;span class="badge-primary badge-lg"&gt;Large pill&lt;/span&gt;
-&lt;span class="badge-success badge-lg badge-square"&gt;Large squared&lt;/span&gt;</code></pre>
+      <pre class="code-block"><code>&lt;span class="badge badge-primary badge-lg"&gt;Large pill&lt;/span&gt;
+&lt;span class="badge badge-success badge-lg badge-square"&gt;Large squared&lt;/span&gt;</code></pre>
     </div>
 
     <p class="demo-label mt-6">With dot indicator — .badge-dot</p>
     <div class="demo-card">
       <div class="demo-preview flex flex-wrap gap-2 items-center">
-        <span class="badge-success"><span class="badge-dot bg-green-500"></span> Online</span>
-        <span class="badge-danger"><span class="badge-dot bg-red-500"></span> Overdue</span>
-        <span class="badge-gray"><span class="badge-dot bg-gray-400"></span> Inactive</span>
+        <span class="badge badge-success"><span class="badge-dot bg-green-500"></span> Online</span>
+        <span class="badge badge-danger"><span class="badge-dot bg-red-500"></span> Overdue</span>
+        <span class="badge badge-gray"><span class="badge-dot bg-gray-400"></span> Inactive</span>
       </div>
-      <pre class="code-block"><code>&lt;span class="badge-success"&gt;
+      <pre class="code-block"><code>&lt;span class="badge badge-success"&gt;
   &lt;span class="badge-dot bg-green-500"&gt;&lt;/span&gt; Online
 &lt;/span&gt;</code></pre>
     </div>
