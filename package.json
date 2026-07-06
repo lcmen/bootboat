@@ -2,7 +2,12 @@
   "private": true,
   "type": "module",
   "engines": {
-    "node": "24.x"
+    "node": ">=24 <25"
+  },
+  "overrides": {
+    "gray-matter": {
+      "js-yaml": "3.15.0"
+    }
   },
   "scripts": {
     "build": "npm run check:docs && npm run clean && npm run build:css && npm run build:11ty",
