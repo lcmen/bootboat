@@ -1,6 +1,9 @@
 {
   "private": true,
   "type": "module",
+  "engines": {
+    "node": "24.x"
+  },
   "scripts": {
     "build": "npm run check:docs && npm run clean && npm run build:css && npm run build:11ty",
     "build:css": "npx @tailwindcss/cli -i website/assets/index.css -o dist/assets/index.css --minify",
