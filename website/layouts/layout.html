@@ -3,11 +3,11 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>{% if title %}{{ title }} — {% endif %}Bootboat</title>
+  <title><%= "#{html_escape(@item[:title])} — " if @item[:title] %>Bootboat</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300..700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="{{ '/assets/index.css' | url }}" />
+  <link rel="stylesheet" href="<%= url('/assets/index.css') %>" />
   <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
 <style>[x-cloak] { display: none !important; }</style>
 </head>
@@ -15,7 +15,7 @@
 
 <div class="layout" x-data="{ sidebarOpen: false }">
 
-  {% include "nav.html" %}
+  <%= render "/nav.html" %>
 
   <!-- Mobile menu button -->
   <button @click="sidebarOpen = true" class="mobile-menu-btn" aria-label="Open menu">
@@ -26,7 +26,7 @@
 
   <div class="content-wrapper">
     <main class="main-content">
-      {{ content }}
+      <%= yield %>
     </main>
 
     <footer class="footer">

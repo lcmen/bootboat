@@ -1,0 +1,13 @@
+output_dir: ../dist
+base_path: ""
+
+prune:
+  auto_prune: false
+
+data_sources:
+  - type: filesystem
+    encoding: utf-8
+
+environments:
+  production:
+    base_path: /bootboat

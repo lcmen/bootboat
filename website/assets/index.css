@@ -2,7 +2,8 @@
 
 @import "tailwindcss";
 @plugin "@tailwindcss/forms" { strategy: base }
-@source "../*.html";
+@source "../content/**/*.html";
+@source "../layouts/**/*.html";
 @import "../../bootboat.css";
 
 
