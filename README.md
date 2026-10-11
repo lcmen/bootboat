@@ -100,6 +100,16 @@ Defaults are built in. Override any of these in your `@theme`:
 - `--color-secondary-{50..900}` (default: slate)
 - `--font-sans` (default: Inter)
 
+## Website development
+
+Use `mise install` to install Node.js 24 and Ruby 4.0. Then install the dependencies with `npm ci` and `bundle install`.
+
+Run `npm run dev` and open `http://localhost:8082/`. Nanoc rebuilds the pages when source files change. Tailwind watches the CSS and HTML files.
+
+Run `npm run build` to generate the website in `dist/`. Run `NANOC_ENV=production npm run build` to generate links with the `/bootboat/` prefix for GitHub Pages.
+
+Component pages are in `website/content/`. Shared ERB templates are in `website/layouts/`. `website/Rules` defines how Nanoc builds the pages. Website CSS is in `website/assets/index.css`.
+
 ## Credits
 
 Visual design based on [Sailboat UI](https://sailboatui.com/) by [Jeremie Carlson](https://github.com/nickcarlson).

@@ -1,2 +1,6 @@
 node_modules/
 dist/
+vendor/bundle/
+.bundle/
+website/tmp/
+website/crash.log

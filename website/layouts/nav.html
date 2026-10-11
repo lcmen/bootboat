@@ -1,0 +1,31 @@
+<aside class="sidebar" :class="{ 'sidebar-open': sidebarOpen }" x-cloak>
+  <!-- Close button for mobile -->
+  <button @click="sidebarOpen = false" class="sidebar-close-btn" aria-label="Close menu">
+    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+      <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+    </svg>
+  </button>
+
+  <a href="<%= url('/') %>" class="sidebar-brand">Bootboat</a>
+  <nav id="sidebar-nav">
+    <a href="<%= url('/accordion/') %>" class="<%= navigation_class('accordion') %>">Accordion</a>
+    <a href="<%= url('/alerts/') %>" class="<%= navigation_class('alerts') %>">Alerts &amp; Badges</a>
+    <a href="<%= url('/breadcrumbs/') %>" class="<%= navigation_class('breadcrumbs') %>">Breadcrumbs</a>
+    <a href="<%= url('/buttons/') %>" class="<%= navigation_class('buttons') %>">Buttons</a>
+    <a href="<%= url('/card-group/') %>" class="<%= navigation_class('card-group') %>">Card Group</a>
+    <a href="<%= url('/cards/') %>" class="<%= navigation_class('cards') %>">Cards</a>
+    <a href="<%= url('/dropdown/') %>" class="<%= navigation_class('dropdown') %>">Dropdown</a>
+    <a href="<%= url('/forms/') %>" class="<%= navigation_class('forms') %>">Forms</a>
+    <a href="<%= url('/list/') %>" class="<%= navigation_class('list') %>">List</a>
+    <a href="<%= url('/modal/') %>" class="<%= navigation_class('modal') %>">Modal</a>
+    <a href="<%= url('/navbar/') %>" class="<%= navigation_class('navbar') %>">Navbar</a>
+    <a href="<%= url('/pagination/') %>" class="<%= navigation_class('pagination') %>">Pagination</a>
+    <a href="<%= url('/tables/') %>" class="<%= navigation_class('tables') %>">Tables</a>
+    <a href="<%= url('/tabs/') %>" class="<%= navigation_class('tabs') %>">Tabs</a>
+    <a href="<%= url('/typography/') %>" class="<%= navigation_class('typography') %>">Typography</a>
+    <a href="<%= url('/utilities/') %>" class="<%= navigation_class('utilities') %>">Utilities</a>
+  </nav>
+</aside>
+
+<!-- Mobile backdrop overlay -->
+<div x-show="sidebarOpen" x-transition.opacity class="sidebar-backdrop" @click="sidebarOpen = false"></div>
