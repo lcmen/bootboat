@@ -41,14 +41,27 @@ title: Tabs
       &lt;/li&gt;
       &lt;li&gt;
         &lt;a @click="tab = 1" class="tab-item" :class="tab === 1 &amp;&amp; 'tab-item-active'"&gt;
-          Notifications &lt;span class="tab-badge"&gt;8&lt;/span&gt;
+          Settings
+        &lt;/a&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;a @click="tab = 2" class="tab-item" :class="tab === 2 &amp;&amp; 'tab-item-active'"&gt;
+          Notifications
+          &lt;span class="tab-badge"&gt;8&lt;/span&gt;
+        &lt;/a&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;a @click="tab = 3" class="tab-item" :class="tab === 3 &amp;&amp; 'tab-item-active'"&gt;
+          Billing
         &lt;/a&gt;
       &lt;/li&gt;
     &lt;/ul&gt;
   &lt;/div&gt;
   &lt;div class="tab-panel"&gt;
-    &lt;div x-show="tab === 0"&gt;Profile content.&lt;/div&gt;
-    &lt;div x-show="tab === 1"&gt;Notifications content.&lt;/div&gt;
+    &lt;div x-show="tab === 0"&gt;&lt;p class="text-sm text-secondary-500"&gt;Profile content.&lt;/p&gt;&lt;/div&gt;
+    &lt;div x-show="tab === 1"&gt;&lt;p class="text-sm text-secondary-500"&gt;Settings content.&lt;/p&gt;&lt;/div&gt;
+    &lt;div x-show="tab === 2"&gt;&lt;p class="text-sm text-secondary-500"&gt;8 unread notifications.&lt;/p&gt;&lt;/div&gt;
+    &lt;div x-show="tab === 3"&gt;&lt;p class="text-sm text-secondary-500"&gt;Billing content.&lt;/p&gt;&lt;/div&gt;
   &lt;/div&gt;
 &lt;/div&gt;</code></pre>
     </div>
