@@ -52,6 +52,7 @@ npm run clean       # Remove dist/ directory
 | **Button Groups** | `.btn-group`, `.btn-group-item`, `.btn-group-item-active`, `.btn-group-label` |
 | **Forms** | `.form-input`, `.form-input-error`, `.form-select`, `.form-checkbox`, `.form-radio`, `.form-textarea`, `.form-textarea-error`, `.form-file`, `.form-file-dropzone`, `.form-toggle`, `.form-toggle-track`, `.form-toggle-track-sm`, `.form-toggle-track-lg` |
 | **Form Layout** | `.form-label`, `.form-label-required`, `.form-help`, `.form-error`, `.form-group`, `.form-row`, `.form-inline`, `.form-addon`, `.form-addon-left`, `.form-addon-right`, `.form-addon-disabled`, `.has-addon-left`, `.has-addon-right` |
+| **Cardstrip** | `.cardstrip`, `.cardstrip-2`, `.cardstrip-item` |
 | **Cards** | `.card`, `.card-body`, `.card-sm`, `.card-md`, `.card-lg` |
 | **Navbar** | `.navbar`, `.navbar-inner`, `.navbar-brand`, `.navbar-brand-icon`, `.navbar-actions` |
 | **Dropdown** | `.dropdown`, `.dropdown-trigger`, `.dropdown-panel`, `.dropdown-panel-left`, `.dropdown-panel-right`, `.dropdown-panel-wide`, `.dropdown-section`, `.dropdown-item`, `.dropdown-item-danger`, `.dropdown-item-icon` |
