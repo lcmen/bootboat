@@ -43,7 +43,7 @@ Override theme tokens in an `@theme` block after the imports. Defaults are blue 
 
 ## Website development
 
-Use Node.js 26 and Ruby 4.1, as set in `mise.toml`:
+Use Node.js 26 and Ruby 4.0.7, as set in `mise.toml`:
 
 ```sh
 mise install
