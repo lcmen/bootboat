@@ -20,14 +20,16 @@ title: Buttons
         <button class="btn btn-dark">Dark</button>
         <button class="btn btn-ghost">Ghost</button>
       </div>
-      <pre class="code-block"><code>&lt;button class="btn btn-primary"&gt;Primary&lt;/button&gt;
-&lt;button class="btn btn-secondary"&gt;Secondary&lt;/button&gt;
-&lt;button class="btn btn-danger"&gt;Danger&lt;/button&gt;
-&lt;button class="btn btn-warning"&gt;Warning&lt;/button&gt;
-&lt;button class="btn btn-success"&gt;Success&lt;/button&gt;
-&lt;button class="btn btn-info"&gt;Info&lt;/button&gt;
-&lt;button class="btn btn-dark"&gt;Dark&lt;/button&gt;
-&lt;button class="btn btn-ghost"&gt;Ghost&lt;/button&gt;</code></pre>
+      <pre class="code-block"><code>&lt;div class="flex flex-wrap gap-3"&gt;
+  &lt;button class="btn btn-primary"&gt;Primary&lt;/button&gt;
+  &lt;button class="btn btn-secondary"&gt;Secondary&lt;/button&gt;
+  &lt;button class="btn btn-danger"&gt;Danger&lt;/button&gt;
+  &lt;button class="btn btn-warning"&gt;Warning&lt;/button&gt;
+  &lt;button class="btn btn-success"&gt;Success&lt;/button&gt;
+  &lt;button class="btn btn-info"&gt;Info&lt;/button&gt;
+  &lt;button class="btn btn-dark"&gt;Dark&lt;/button&gt;
+  &lt;button class="btn btn-ghost"&gt;Ghost&lt;/button&gt;
+&lt;/div&gt;</code></pre>
     </div>
 
     <p class="demo-label mt-6">Sizes — .btn-sm / default / .btn-lg / .btn-full</p>
@@ -42,10 +44,16 @@ title: Buttons
           <button class="btn btn-primary btn-full">Full width</button>
         </div>
       </div>
-      <pre class="code-block"><code>&lt;button class="btn btn-primary btn-sm"&gt;Small&lt;/button&gt;
-&lt;button class="btn btn-primary"&gt;Default&lt;/button&gt;
-&lt;button class="btn btn-primary btn-lg"&gt;Large&lt;/button&gt;
-&lt;button class="btn btn-primary btn-full"&gt;Full width&lt;/button&gt;</code></pre>
+      <pre class="code-block"><code>&lt;div class="space-y-3"&gt;
+  &lt;div class="flex flex-wrap items-end gap-3"&gt;
+    &lt;button class="btn btn-primary btn-sm"&gt;Small&lt;/button&gt;
+    &lt;button class="btn btn-primary"&gt;Default&lt;/button&gt;
+    &lt;button class="btn btn-primary btn-lg"&gt;Large&lt;/button&gt;
+  &lt;/div&gt;
+  &lt;div class="max-w-xs"&gt;
+    &lt;button class="btn btn-primary btn-full"&gt;Full width&lt;/button&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
     </div>
 
     <p class="demo-label mt-6">With icon</p>
@@ -60,10 +68,16 @@ title: Buttons
           Delete
         </button>
       </div>
-      <pre class="code-block"><code>&lt;button class="btn btn-primary"&gt;
-  &lt;svg class="h-4 w-4"&gt;...&lt;/svg&gt;
-  Add item
-&lt;/button&gt;</code></pre>
+      <pre class="code-block"><code>&lt;div class="flex flex-wrap gap-3"&gt;
+  &lt;button class="btn btn-primary"&gt;
+    &lt;svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="h-4 w-4"&gt;&lt;path d="M10.75 4.75a.75.75 0 00-1.5 0v4.5h-4.5a.75.75 0 000 1.5h4.5v4.5a.75.75 0 001.5 0v-4.5h4.5a.75.75 0 000-1.5h-4.5v-4.5z" /&gt;&lt;/svg&gt;
+    Add item
+  &lt;/button&gt;
+  &lt;button class="btn btn-danger"&gt;
+    &lt;svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="h-4 w-4"&gt;&lt;path fill-rule="evenodd" d="M8.75 1A2.75 2.75 0 006 3.75v.443c-.795.077-1.584.176-2.365.298a.75.75 0 10.23 1.482l.149-.022 1.005 11.36A2.75 2.75 0 007.77 20h4.46a2.75 2.75 0 002.751-2.689l1.005-11.36.149.022a.75.75 0 00.23-1.482A41.03 41.03 0 0014 4.193V3.75A2.75 2.75 0 0011.25 1h-2.5z" clip-rule="evenodd" /&gt;&lt;/svg&gt;
+    Delete
+  &lt;/button&gt;
+&lt;/div&gt;</code></pre>
     </div>
 
     <p class="demo-label mt-6">Icon-only — .btn-icon + button color variants</p>
@@ -76,12 +90,14 @@ title: Buttons
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="h-5 w-5"><path d="M10 3a1.5 1.5 0 110 3 1.5 1.5 0 010-3zM10 8.5a1.5 1.5 0 110 3 1.5 1.5 0 010-3zM11.5 15.5a1.5 1.5 0 10-3 0 1.5 1.5 0 003 0z" /></svg>
         </button>
       </div>
-      <pre class="code-block"><code>&lt;button class="btn-icon btn-primary"&gt;
-  &lt;svg class="h-5 w-5"&gt;...&lt;/svg&gt;
-&lt;/button&gt;
-&lt;button class="btn-icon btn-secondary"&gt;
-  &lt;svg class="h-5 w-5"&gt;...&lt;/svg&gt;
-&lt;/button&gt;</code></pre>
+      <pre class="code-block"><code>&lt;div class="flex gap-3"&gt;
+  &lt;button class="btn-icon btn-primary"&gt;
+    &lt;svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="h-5 w-5"&gt;&lt;path d="M10.75 4.75a.75.75 0 00-1.5 0v4.5h-4.5a.75.75 0 000 1.5h4.5v4.5a.75.75 0 001.5 0v-4.5h4.5a.75.75 0 000-1.5h-4.5v-4.5z" /&gt;&lt;/svg&gt;
+  &lt;/button&gt;
+  &lt;button class="btn-icon btn-secondary"&gt;
+    &lt;svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="h-5 w-5"&gt;&lt;path d="M10 3a1.5 1.5 0 110 3 1.5 1.5 0 010-3zM10 8.5a1.5 1.5 0 110 3 1.5 1.5 0 010-3zM11.5 15.5a1.5 1.5 0 10-3 0 1.5 1.5 0 003 0z" /&gt;&lt;/svg&gt;
+  &lt;/button&gt;
+&lt;/div&gt;</code></pre>
     </div>
 
     <p class="demo-label mt-6">Disabled state</p>
@@ -91,7 +107,11 @@ title: Buttons
         <button class="btn btn-secondary" disabled>Disabled secondary</button>
         <button class="btn btn-danger" disabled>Disabled danger</button>
       </div>
-      <pre class="code-block"><code>&lt;button class="btn btn-primary" disabled&gt;Disabled&lt;/button&gt;</code></pre>
+      <pre class="code-block"><code>&lt;div class="flex flex-wrap gap-3"&gt;
+  &lt;button class="btn btn-primary" disabled&gt;Disabled primary&lt;/button&gt;
+  &lt;button class="btn btn-secondary" disabled&gt;Disabled secondary&lt;/button&gt;
+  &lt;button class="btn btn-danger" disabled&gt;Disabled danger&lt;/button&gt;
+&lt;/div&gt;</code></pre>
     </div>
 
     <p class="demo-label mt-6">Glass &amp; White — for colored backgrounds</p>
@@ -100,8 +120,10 @@ title: Buttons
         <button class="btn btn-glass">Glass</button>
         <button class="btn btn-white">White</button>
       </div>
-      <pre class="code-block"><code>&lt;button class="btn btn-glass"&gt;Glass&lt;/button&gt;
-&lt;button class="btn btn-white"&gt;White&lt;/button&gt;</code></pre>
+      <pre class="code-block"><code>&lt;div class="flex gap-3"&gt;
+  &lt;button class="btn btn-glass"&gt;Glass&lt;/button&gt;
+  &lt;button class="btn btn-white"&gt;White&lt;/button&gt;
+&lt;/div&gt;</code></pre>
     </div>
   </div>
 
@@ -123,9 +145,9 @@ title: Buttons
         </div>
       </div>
       <pre class="code-block"><code>&lt;div class="btn-group"&gt;
-  &lt;button class="btn-group-item"&gt;&lt;svg ...&gt;&lt;/svg&gt;&lt;/button&gt;
+  &lt;button class="btn-group-item"&gt;&lt;svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="h-4 w-4"&gt;&lt;path fill-rule="evenodd" d="M12.79 5.23a.75.75 0 01-.02 1.06L8.832 10l3.938 3.71a.75.75 0 11-1.04 1.08l-4.5-4.25a.75.75 0 010-1.08l4.5-4.25a.75.75 0 011.06.02z" clip-rule="evenodd" /&gt;&lt;/svg&gt;&lt;/button&gt;
   &lt;span class="btn-group-label"&gt;2026&lt;/span&gt;
-  &lt;button class="btn-group-item"&gt;&lt;svg ...&gt;&lt;/svg&gt;&lt;/button&gt;
+  &lt;button class="btn-group-item"&gt;&lt;svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="h-4 w-4"&gt;&lt;path fill-rule="evenodd" d="M7.21 14.77a.75.75 0 01.02-1.06L11.168 10 7.23 6.29a.75.75 0 111.04-1.08l4.5 4.25a.75.75 0 010 1.08l-4.5 4.25a.75.75 0 01-1.06-.02z" clip-rule="evenodd" /&gt;&lt;/svg&gt;&lt;/button&gt;
 &lt;/div&gt;</code></pre>
     </div>
 

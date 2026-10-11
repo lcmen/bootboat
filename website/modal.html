@@ -14,21 +14,50 @@ title: Modal
         <button @click="open1 = true" class="btn btn-primary">Without footer</button>
         <button @click="open2 = true" class="btn btn-secondary">With footer</button>
       </div>
-      <pre class="code-block"><code>&lt;button @click="open = true" class="btn btn-primary"&gt;Open&lt;/button&gt;
+      <pre class="code-block"><code>&lt;div x-data="{ open1: false, open2: false }"&gt;
+  &lt;div class="flex gap-3"&gt;
+    &lt;button @click="open1 = true" class="btn btn-primary"&gt;Without footer&lt;/button&gt;
+    &lt;button @click="open2 = true" class="btn btn-secondary"&gt;With footer&lt;/button&gt;
+  &lt;/div&gt;
 
-&lt;template x-teleport="body"&gt;
-  &lt;div x-show="open" x-cloak&gt;
-    &lt;div class="modal-overlay" x-transition.opacity @click="open = false"&gt;&lt;/div&gt;
-    &lt;div class="modal-wrapper" x-transition&gt;
-      &lt;div class="modal" @click.outside="open = false"&gt;
-        &lt;div class="modal-body"&gt;
-          &lt;button @click="open = false" class="modal-close"&gt;...&lt;/button&gt;
-          &lt;h3 class="h3"&gt;Title&lt;/h3&gt;
+  &lt;template x-teleport="body"&gt;
+    &lt;div x-show="open1" x-cloak&gt;
+      &lt;div class="modal-overlay" x-transition.opacity @click="open1 = false"&gt;&lt;/div&gt;
+      &lt;div class="modal-wrapper" x-transition&gt;
+        &lt;div class="modal" @click.outside="open1 = false"&gt;
+          &lt;div class="modal-body"&gt;
+            &lt;button @click="open1 = false" class="modal-close" aria-label="Close dialog"&gt;
+              &lt;svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="h-6 w-6"&gt;&lt;path d="M6.28 5.22a.75.75 0 00-1.06 1.06L8.94 10l-3.72 3.72a.75.75 0 101.06 1.06L10 11.06l3.72 3.72a.75.75 0 101.06-1.06L11.06 10l3.72-3.72a.75.75 0 00-1.06-1.06L10 8.94 6.28 5.22z" /&gt;&lt;/svg&gt;
+            &lt;/button&gt;
+            &lt;h3 class="h3"&gt;Detail view&lt;/h3&gt;
+            &lt;p class="mt-2 text-sm text-secondary-500"&gt;This modal has no footer. Use for info dialogs or detail views.&lt;/p&gt;
+          &lt;/div&gt;
         &lt;/div&gt;
       &lt;/div&gt;
     &lt;/div&gt;
-  &lt;/div&gt;
-&lt;/template&gt;</code></pre>
+  &lt;/template&gt;
+
+  &lt;template x-teleport="body"&gt;
+    &lt;div x-show="open2" x-cloak&gt;
+      &lt;div class="modal-overlay" x-transition.opacity @click="open2 = false"&gt;&lt;/div&gt;
+      &lt;div class="modal-wrapper" x-transition&gt;
+        &lt;div class="modal" @click.outside="open2 = false"&gt;
+          &lt;div class="modal-body"&gt;
+            &lt;button @click="open2 = false" class="modal-close" aria-label="Close dialog"&gt;
+              &lt;svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="h-6 w-6"&gt;&lt;path d="M6.28 5.22a.75.75 0 00-1.06 1.06L8.94 10l-3.72 3.72a.75.75 0 101.06 1.06L10 11.06l3.72 3.72a.75.75 0 101.06-1.06L11.06 10l3.72-3.72a.75.75 0 00-1.06-1.06L10 8.94 6.28 5.22z" /&gt;&lt;/svg&gt;
+            &lt;/button&gt;
+            &lt;h3 class="h3"&gt;Confirm action&lt;/h3&gt;
+            &lt;p class="mt-2 text-sm text-secondary-500"&gt;Are you sure? This cannot be undone.&lt;/p&gt;
+          &lt;/div&gt;
+          &lt;div class="modal-footer"&gt;
+            &lt;button @click="open2 = false" class="btn btn-secondary"&gt;Cancel&lt;/button&gt;
+            &lt;button @click="open2 = false" class="btn btn-danger"&gt;Delete&lt;/button&gt;
+          &lt;/div&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/template&gt;
+&lt;/div&gt;</code></pre>
     </div>
 
     <template x-teleport="body">
@@ -88,8 +117,20 @@ title: Modal
           </div>
         </div>
       </div>
-      <pre class="code-block"><code>&lt;div class="modal modal-lg"&gt;...&lt;/div&gt;
-&lt;div class="modal modal-xl"&gt;...&lt;/div&gt;</code></pre>
+      <pre class="code-block"><code>&lt;div class="space-y-3"&gt;
+  &lt;div class="modal modal-lg"&gt;
+    &lt;div class="modal-body"&gt;
+      &lt;h3 class="h3"&gt;Large modal&lt;/h3&gt;
+      &lt;p class="mt-2 text-sm text-secondary-500"&gt;Use for longer forms and content that needs more horizontal space.&lt;/p&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+  &lt;div class="modal modal-xl"&gt;
+    &lt;div class="modal-body"&gt;
+      &lt;h3 class="h3"&gt;Extra large modal&lt;/h3&gt;
+      &lt;p class="mt-2 text-sm text-secondary-500"&gt;Use for wide workflows, previews, or comparison views.&lt;/p&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
     </div>
   </div>
 </div>

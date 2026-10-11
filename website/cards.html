@@ -20,7 +20,8 @@ title: Cards
       </div>
       <pre class="code-block"><code>&lt;div class="card"&gt;
   &lt;div class="card-body"&gt;
-    Content
+    &lt;h3 class="h4"&gt;Card&lt;/h3&gt;
+    &lt;p class="mt-1 text-sm text-secondary-500"&gt;No max-width — stretches to its container.&lt;/p&gt;
   &lt;/div&gt;
 &lt;/div&gt;</code></pre>
     </div>
@@ -36,7 +37,10 @@ title: Cards
         </div>
       </div>
       <pre class="code-block"><code>&lt;div class="card card-sm"&gt;
-  &lt;div class="card-body"&gt;Content&lt;/div&gt;
+  &lt;div class="card-body"&gt;
+    &lt;h3 class="h4"&gt;Small card&lt;/h3&gt;
+    &lt;p class="mt-1 text-sm text-secondary-500"&gt;Good for narrow widgets and callouts.&lt;/p&gt;
+  &lt;/div&gt;
 &lt;/div&gt;</code></pre>
     </div>
 
@@ -51,7 +55,10 @@ title: Cards
         </div>
       </div>
       <pre class="code-block"><code>&lt;div class="card card-md"&gt;
-  &lt;div class="card-body"&gt;Content&lt;/div&gt;
+  &lt;div class="card-body"&gt;
+    &lt;h3 class="h4"&gt;Medium card&lt;/h3&gt;
+    &lt;p class="mt-1 text-sm text-secondary-500"&gt;Good for auth forms and login dialogs.&lt;/p&gt;
+  &lt;/div&gt;
 &lt;/div&gt;</code></pre>
     </div>
 
@@ -66,7 +73,10 @@ title: Cards
         </div>
       </div>
       <pre class="code-block"><code>&lt;div class="card card-lg"&gt;
-  &lt;div class="card-body"&gt;Content&lt;/div&gt;
+  &lt;div class="card-body"&gt;
+    &lt;h3 class="h4"&gt;Large card&lt;/h3&gt;
+    &lt;p class="mt-1 text-sm text-secondary-500"&gt;Wider forms and content panels.&lt;/p&gt;
+  &lt;/div&gt;
 &lt;/div&gt;</code></pre>
     </div>
 
@@ -86,11 +96,14 @@ title: Cards
         </article>
       </div>
       <pre class="code-block"><code>&lt;article class="card card-md"&gt;
-  &lt;img src="cover.jpg" alt="" class="aspect-video w-full object-cover" /&gt;
+  &lt;img src="https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&amp;fit=crop&amp;w=900&amp;q=80" alt="Desk with a laptop and notebook" class="aspect-video w-full object-cover" /&gt;
   &lt;div class="card-body"&gt;
-    &lt;span class="badge badge-primary"&gt;Product&lt;/span&gt;
+    &lt;div class="mb-2 flex flex-wrap gap-2"&gt;
+      &lt;span class="badge badge-primary"&gt;Product&lt;/span&gt;
+      &lt;span class="badge badge-gray"&gt;4 min read&lt;/span&gt;
+    &lt;/div&gt;
     &lt;h3 class="h4"&gt;Planning a personal dashboard&lt;/h3&gt;
-    &lt;p class="mt-1 text-sm text-secondary-500"&gt;Use cards for small content blocks.&lt;/p&gt;
+    &lt;p class="mt-1 text-sm text-secondary-500"&gt;Use cards for small content blocks, notes, and activity summaries.&lt;/p&gt;
   &lt;/div&gt;
 &lt;/article&gt;</code></pre>
     </div>
@@ -116,10 +129,11 @@ title: Cards
       <pre class="code-block"><code>&lt;section class="card card-md"&gt;
   &lt;div class="border-b border-gray-100 px-6 py-4"&gt;
     &lt;h3 class="h5"&gt;Team invite&lt;/h3&gt;
-    &lt;p class="mt-1 text-sm text-secondary-400"&gt;Invite a collaborator.&lt;/p&gt;
+    &lt;p class="mt-1 text-sm text-secondary-400"&gt;Invite a collaborator to this workspace.&lt;/p&gt;
   &lt;/div&gt;
   &lt;div class="card-body"&gt;
-    &lt;input type="email" class="form-input" /&gt;
+    &lt;label class="form-label" for="invite-email"&gt;Email address&lt;/label&gt;
+    &lt;input id="invite-email" type="email" class="form-input" placeholder="teammate@example.com" /&gt;
   &lt;/div&gt;
   &lt;div class="flex justify-end gap-3 bg-secondary-50 px-6 py-3"&gt;
     &lt;button class="btn btn-secondary"&gt;Cancel&lt;/button&gt;
@@ -169,7 +183,21 @@ title: Cards
       &lt;span class="mt-1 badge-dot bg-green-500"&gt;&lt;/span&gt;
       &lt;div&gt;
         &lt;p class="text-sm font-medium text-secondary-900"&gt;Backup completed&lt;/p&gt;
-        &lt;p class="mt-0.5 text-sm text-secondary-400"&gt;Database snapshot finished.&lt;/p&gt;
+        &lt;p class="mt-0.5 text-sm text-secondary-400"&gt;Database snapshot finished 12 minutes ago.&lt;/p&gt;
+      &lt;/div&gt;
+    &lt;/li&gt;
+    &lt;li class="flex items-start gap-3 px-6 py-4"&gt;
+      &lt;span class="mt-1 badge-dot bg-primary-500"&gt;&lt;/span&gt;
+      &lt;div&gt;
+        &lt;p class="text-sm font-medium text-secondary-900"&gt;New signup&lt;/p&gt;
+        &lt;p class="mt-0.5 text-sm text-secondary-400"&gt;A user joined the private beta.&lt;/p&gt;
+      &lt;/div&gt;
+    &lt;/li&gt;
+    &lt;li class="flex items-start gap-3 px-6 py-4"&gt;
+      &lt;span class="mt-1 badge-dot bg-yellow-500"&gt;&lt;/span&gt;
+      &lt;div&gt;
+        &lt;p class="text-sm font-medium text-secondary-900"&gt;Invoice pending&lt;/p&gt;
+        &lt;p class="mt-0.5 text-sm text-secondary-400"&gt;Payment retry is scheduled for tomorrow.&lt;/p&gt;
       &lt;/div&gt;
     &lt;/li&gt;
   &lt;/ul&gt;

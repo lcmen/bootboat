@@ -60,17 +60,29 @@ title: Forms
       </div>
       <pre
         class="code-block"
-      ><code>&lt;label class="form-label"&gt;Label&lt;/label&gt;
-&lt;input type="text" class="form-control form-input" /&gt;
+      ><code>&lt;div class="max-w-md space-y-4"&gt;
+  &lt;div&gt;
+    &lt;label class="form-label"&gt;Default input&lt;/label&gt;
+    &lt;input type="email" placeholder="you@example.com" class="form-control form-input" /&gt;
+  &lt;/div&gt;
 
-&lt;label class="form-label form-label-required"&gt;Required&lt;/label&gt;
-&lt;input type="text" class="form-control form-input" /&gt;
-&lt;p class="form-help"&gt;Help text.&lt;/p&gt;
+  &lt;div&gt;
+    &lt;label class="form-label form-label-required"&gt;Required field&lt;/label&gt;
+    &lt;input type="text" placeholder="This field is required" class="form-control form-input" /&gt;
+    &lt;p class="form-help"&gt;This is a help message.&lt;/p&gt;
+  &lt;/div&gt;
 
-&lt;input type="email" class="form-control form-input form-input-error" /&gt;
-&lt;p class="form-error"&gt;Error message.&lt;/p&gt;
+  &lt;div&gt;
+    &lt;label class="form-label form-label-required"&gt;With validation error&lt;/label&gt;
+    &lt;input type="email" value="not-an-email" class="form-control form-input form-input-error" /&gt;
+    &lt;p class="form-error"&gt;Please enter a valid email address.&lt;/p&gt;
+  &lt;/div&gt;
 
-&lt;input type="text" disabled class="form-control form-input" /&gt;</code></pre>
+  &lt;div&gt;
+    &lt;label class="form-label"&gt;Disabled&lt;/label&gt;
+    &lt;input type="text" value="Read only" disabled class="form-control form-input" /&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
     </div>
 
     <p class="demo-label mt-6">Select — .form-control + .form-select</p>
@@ -86,10 +98,13 @@ title: Forms
       </div>
       <pre
         class="code-block"
-      ><code>&lt;select class="form-control form-select"&gt;
-  &lt;option&gt;Monthly&lt;/option&gt;
-  &lt;option&gt;Yearly&lt;/option&gt;
-&lt;/select&gt;</code></pre>
+      ><code>&lt;div class="max-w-xs"&gt;
+  &lt;label class="form-label"&gt;Frequency&lt;/label&gt;
+  &lt;select class="form-control form-select"&gt;
+    &lt;option&gt;Monthly&lt;/option&gt;
+    &lt;option&gt;Yearly&lt;/option&gt;
+  &lt;/select&gt;
+&lt;/div&gt;</code></pre>
     </div>
 
     <p class="demo-label mt-6">
@@ -109,7 +124,10 @@ title: Forms
       </div>
       <pre
         class="code-block"
-      ><code>&lt;textarea rows="3" class="form-control form-textarea"&gt;&lt;/textarea&gt;</code></pre>
+      ><code>&lt;div class="max-w-md"&gt;
+  &lt;label class="form-label"&gt;Message&lt;/label&gt;
+  &lt;textarea rows="3" placeholder="Leave a message" class="form-control form-textarea"&gt;&lt;/textarea&gt;
+&lt;/div&gt;</code></pre>
     </div>
 
     <p class="demo-label mt-6">
@@ -150,13 +168,23 @@ title: Forms
           </div>
         </div>
       </div>
-      <pre class="code-block"><code>&lt;div class="flex items-center gap-2"&gt;
-  &lt;input type="checkbox" class="form-choice form-checkbox" id="ck1" /&gt;
-  &lt;label for="ck1"&gt;I agree&lt;/label&gt;
-&lt;/div&gt;
+      <pre class="code-block"><code>&lt;div class="space-y-3"&gt;
+  &lt;div class="flex items-center gap-2"&gt;
+    &lt;input type="checkbox" checked class="form-choice form-checkbox" id="ck1" /&gt;
+    &lt;label for="ck1" class="text-sm text-gray-700"&gt;I agree to the terms&lt;/label&gt;
+  &lt;/div&gt;
 
-&lt;input type="radio" name="plan" class="form-choice form-radio" id="r1" /&gt;
-&lt;label for="r1"&gt;Monthly&lt;/label&gt;</code></pre>
+  &lt;div class="flex items-center gap-4"&gt;
+    &lt;div class="flex items-center gap-2"&gt;
+      &lt;input type="radio" name="plan" checked class="form-choice form-radio" id="r1" /&gt;
+      &lt;label for="r1" class="text-sm text-gray-700"&gt;Monthly&lt;/label&gt;
+    &lt;/div&gt;
+    &lt;div class="flex items-center gap-2"&gt;
+      &lt;input type="radio" name="plan" class="form-choice form-radio" id="r2" /&gt;
+      &lt;label for="r2" class="text-sm text-gray-700"&gt;Yearly&lt;/label&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
     </div>
 
     <p class="demo-label mt-6">File upload — .form-file, .form-file-dropzone</p>
@@ -179,13 +207,18 @@ title: Forms
       </div>
       <pre
         class="code-block"
-      ><code>&lt;input type="file" class="form-file" /&gt;
-
-&lt;label class="form-file-dropzone"&gt;
-  &lt;div class="text-center"&gt;
-    Drop files here
+      ><code>&lt;div class="max-w-sm space-y-4"&gt;
+  &lt;div&gt;
+    &lt;label class="form-label"&gt;Upload file&lt;/label&gt;
+    &lt;input type="file" class="form-file" /&gt;
   &lt;/div&gt;
-&lt;/label&gt;</code></pre>
+  &lt;label class="form-file-dropzone"&gt;
+    &lt;div class="text-center"&gt;
+      &lt;p class="text-sm font-medium text-secondary-700"&gt;Drop files here&lt;/p&gt;
+      &lt;p class="text-xs text-secondary-400"&gt;or click to browse&lt;/p&gt;
+    &lt;/div&gt;
+  &lt;/label&gt;
+&lt;/div&gt;</code></pre>
     </div>
 
     <p class="demo-label mt-6">
@@ -216,30 +249,31 @@ title: Forms
       </div>
       <pre
         class="code-block"
-      ><code>&lt;!-- Sizes: form-toggle-track form-toggle-track-sm / form-toggle-track / form-toggle-track form-toggle-track-lg --&gt;
-&lt;label class="form-toggle"&gt;
-  &lt;input type="checkbox" checked class="peer sr-only" /&gt;
-  &lt;div class="form-toggle-track form-toggle-track-sm"&gt;&lt;/div&gt;
-  &lt;span class="ml-3 text-sm"&gt;Small&lt;/span&gt;
-&lt;/label&gt;
+      ><code>&lt;div class="space-y-3"&gt;
+  &lt;label class="form-toggle"&gt;
+    &lt;input type="checkbox" checked class="peer sr-only" /&gt;
+    &lt;div class="form-toggle-track form-toggle-track-sm"&gt;&lt;/div&gt;
+    &lt;span class="ml-3 text-sm text-gray-700"&gt;Small&lt;/span&gt;
+  &lt;/label&gt;
 
-&lt;label class="form-toggle"&gt;
-  &lt;input type="checkbox" checked class="peer sr-only" /&gt;
-  &lt;div class="form-toggle-track"&gt;&lt;/div&gt;
-  &lt;span class="ml-3 text-sm"&gt;Default (on)&lt;/span&gt;
-&lt;/label&gt;
+  &lt;label class="form-toggle"&gt;
+    &lt;input type="checkbox" checked class="peer sr-only" /&gt;
+    &lt;div class="form-toggle-track"&gt;&lt;/div&gt;
+    &lt;span class="ml-3 text-sm text-gray-700"&gt;Default (enabled)&lt;/span&gt;
+  &lt;/label&gt;
 
-&lt;label class="form-toggle"&gt;
-  &lt;input type="checkbox" class="peer sr-only" /&gt;
-  &lt;div class="form-toggle-track"&gt;&lt;/div&gt;
-  &lt;span class="ml-3 text-sm"&gt;Default (off)&lt;/span&gt;
-&lt;/label&gt;
+  &lt;label class="form-toggle"&gt;
+    &lt;input type="checkbox" class="peer sr-only" /&gt;
+    &lt;div class="form-toggle-track"&gt;&lt;/div&gt;
+    &lt;span class="ml-3 text-sm text-gray-700"&gt;Default (off)&lt;/span&gt;
+  &lt;/label&gt;
 
-&lt;label class="form-toggle"&gt;
-  &lt;input type="checkbox" checked class="peer sr-only" /&gt;
-  &lt;div class="form-toggle-track form-toggle-track-lg"&gt;&lt;/div&gt;
-  &lt;span class="ml-3 text-sm"&gt;Large&lt;/span&gt;
-&lt;/label&gt;</code></pre>
+  &lt;label class="form-toggle"&gt;
+    &lt;input type="checkbox" checked class="peer sr-only" /&gt;
+    &lt;div class="form-toggle-track form-toggle-track-lg"&gt;&lt;/div&gt;
+    &lt;span class="ml-3 text-sm text-gray-700"&gt;Large&lt;/span&gt;
+  &lt;/label&gt;
+&lt;/div&gt;</code></pre>
     </div>
 
     <p class="demo-label mt-6">Inline form row — .form-inline</p>
@@ -256,9 +290,11 @@ title: Forms
           </div>
         </div>
       </div>
-      <pre class="code-block"><code>&lt;div class="form-inline"&gt;
-  &lt;input class="form-control form-input has-addon-right" /&gt;
-  &lt;button class="btn-danger form-addon-right"&gt;Search&lt;/button&gt;
+      <pre class="code-block"><code>&lt;div class="max-w-md"&gt;
+  &lt;div class="form-inline"&gt;
+    &lt;input type="email" placeholder="Search customers" class="form-control form-input has-addon-right" /&gt;
+    &lt;button class="btn-danger form-addon-right"&gt;Search&lt;/button&gt;
+  &lt;/div&gt;
 &lt;/div&gt;</code></pre>
     </div>
 
@@ -293,19 +329,19 @@ title: Forms
           </div>
         </div>
       </div>
-      <pre class="code-block"><code>&lt;div class="form-addon"&gt;
-  &lt;span class="form-addon-left"&gt;https://&lt;/span&gt;
-  &lt;input type="text" class="form-control form-input has-addon-left" /&gt;
-&lt;/div&gt;
-
-&lt;div class="form-addon"&gt;
-  &lt;input type="text" class="form-control form-input has-addon-right" /&gt;
-  &lt;span class="form-addon-right"&gt;@example.com&lt;/span&gt;
-&lt;/div&gt;
-
-&lt;div class="form-addon"&gt;
-  &lt;span class="form-addon-left form-addon-disabled"&gt;USD&lt;/span&gt;
-  &lt;input type="text" class="form-control form-input has-addon-left" disabled /&gt;
+      <pre class="code-block"><code>&lt;div class="max-w-sm space-y-3"&gt;
+  &lt;div class="form-addon"&gt;
+    &lt;span class="form-addon-left"&gt;https://&lt;/span&gt;
+    &lt;input type="text" placeholder="yoursite.com" class="form-control form-input has-addon-left" /&gt;
+  &lt;/div&gt;
+  &lt;div class="form-addon"&gt;
+    &lt;input type="text" placeholder="username" class="form-control form-input has-addon-right" /&gt;
+    &lt;span class="form-addon-right"&gt;@example.com&lt;/span&gt;
+  &lt;/div&gt;
+  &lt;div class="form-addon"&gt;
+    &lt;span class="form-addon-left form-addon-disabled"&gt;USD&lt;/span&gt;
+    &lt;input type="text" placeholder="0.00" class="form-control form-input has-addon-left" disabled /&gt;
+  &lt;/div&gt;
 &lt;/div&gt;</code></pre>
     </div>
   </div>
